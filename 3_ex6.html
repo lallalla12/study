@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>패키지 여행 신청서</h1>
+   <form action="" method="post">
+
+    이름*:<br>
+    <input type="text" name="text" required><br>
+    이메일 주소*:<br>
+    <input type="email" name="email" required><br>
+    패키지를 선택해주세요*:<br>
+    <select name="pakage">
+        <option value="유럽">유럽</option>
+        <option value="유럽">일본</option>
+        <option value="유럽">중국</option>
+    </select><br>
+    출발일*<br>
+    <input type="date" required><br>
+    출발인원*<br>
+    <input type="number" min="1" max="20" required><br>
+    선택관광*<br>
+    <input type="checkbox" name="tour" value="쇼핑투어" required> 쇼핑투어<br>
+    <input type="checkbox" name="tour" value="디즈니랜드"required> 디즈니랜드<br>
+    <input type="checkbox" name="tour" value="씨월드"required> 씨월드<br>
+    쿠폰 번호 입력:<br>
+    <input type="number" name="cupon"><br>
+    여행 조건에 동의하시나요?*<br>
+    <input type="radio" name="okno" value="ok" required>동의합니다.
+    <input type="radio" name="okno" value="ok" required>동의하지 않습니다.<br>
+    <input type="submit" value="신청서 제출">
+
+
+   </form> 
+</body>
+</html>
