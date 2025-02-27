@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4_css_desc</title>
+
+    <style>
+        body em {color: pink;} /*body안의 em요소*/
+        body > h1 {color: rgb(181, 252, 159);}/*body안의 h1요소*/
+
+        .a + .b{background-color: green;}/*body 안의 em(형제관계) + -> 인접 선택자로 부르는 선택자. 앞의 요소 바로 뒤에 있는 요소만 선택합니다.기호 앞에 지정한 태그의 바로 다음에 위치하는 제일 가까운 형제 태그만 css적용 되고 
+        ~기호 뒤에 다른 형제가 존재하는 경우 전부 적용*/
+    </style>
+</head>
+<body>
+    <h1 class="a"> This headline is <em>very</em> important</h1>
+    <h1 class="b">두번째 h1 요소입니다.</h1>
+    <h1 class="b">세번째 h1 요소입니다.</h1>
+</body>
+</html>
