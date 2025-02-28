@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>5_transf3d</title>
+    <style>
+        div{
+            background-color: green;
+            height: 150px;
+            width: 150px;
+        }
+        .container{
+            background-color: yellow;
+            border: 1px solid black;
+        }
+        .transformed {
+            backface-visibility: visible; /*후면을 보이게 하는 속성*/
+            transform-origin: 50% 42%; /*변환 원점을 설정*/
+            transform: perspective(500px)/*원근 변환에서 거리를 설정*/ rotateY(59deg)/*Y축을 중심으로 하는 변환*/ rotateX(0deg)/*X축을 중심으로 하는 변환*/;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="transformed"></div>
+    </div>
+</body>
+</html>

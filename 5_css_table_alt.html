@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>5_css_table</title>
+    <style>
+
+        table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,th{
+            border-bottom: 1px solid green;
+            width: 100px;
+        }
+
+        th{
+            background-color: green;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color:pink ;
+        }
+    
+
+        td{text-align: center;
+            height: 50px;} 
+
+        tr:hover{
+            background: lightblue;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <table>
+        <caption> 기말고사 성적리스트</caption>
+        <tr>
+            <th>학번</th>
+            <th>이름</th>
+            <th>성적</th>
+            <th>학점</th>
+        </tr>
+
+        <tr>
+            <th>1</th>
+            <th>bill</th>
+            <th>98</th>
+            <th>a+</th>
+        </tr>
+
+        <tr>
+            <td> 2 </td>
+            <td> steve </td>
+            <td> 89 </td>
+            <td> b+ </td>
+            
+        </tr>
+
+
+        <tr>
+            <td> 3 </td>
+            <td> larry </td>
+            <td> 93 </td>
+            <td> a- </td>
+        </tr>
+
+
+    </table>
+</body>
+</html>

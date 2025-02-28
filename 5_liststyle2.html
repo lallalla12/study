@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>5_liststyle1</title>
+    <style>
+        ul{
+            list-style: none; /*리스트 앞에 아무것도 붙지 않는다.*/
+            text-align: center; /*리스트 안의 텍스트가 중앙 정렬*/
+            border-top: 1px solid pink; /*리스트 아리애 선*/
+            border-bottom: 1px solid pink; /*리스트 아리애 선*/
+            padding: 10px 0; /*위 아래가 10 좌우는 0*/
+        }
+
+        ul li{
+            display: inline; /*리스트 항목들이 한 줄에 차례로 배치*/
+            text-transform: uppercase; /*대문자*/
+            padding: 0 10px;
+            letter-spacing: 10px; /*항목 간의 간격과 글자 간격 설정*/
+        }
+
+        ul li a{
+            text-decoration: none;
+
+            color: lightblue;
+        }
+
+        ul li a:hover {
+            text-decoration: underline; /*마우스가 위에 오면 밑줄*/
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+</body>
+</html>

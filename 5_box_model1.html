@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>5_box_model</title>
+    <style>
+        div.t1{
+            background-color: lightcyan;
+            width: 200px;
+            padding: 10px;
+            border: 5px solid lightblue;
+            box-sizing: content-box;
+
+        }
+
+        div.t2{
+            background-color: lightcyan;
+            width: 200px;
+            padding: 10px;
+            border: 5px solid lightblue;
+            box-sizing: border-box;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="t1">이것은 div요소로서 전체 폭은 230픽셀이다.</div>
+    <div class="t2">이것은 div요소로서 전체 폭은 200픽셀이다.</div>
+
+</body>
+</html>
+
+<!--box-sizing -> 전체 폭-->

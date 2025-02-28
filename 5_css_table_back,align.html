@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>5_css_table</title>
+    <style>
+
+        
+
+        table, td, th{
+            border: 1px solid blue;
+        }
+
+        td,th{
+            color: white;
+            background-color: green;
+        }
+
+        
+        table{
+            border-collapse: separate;
+            width: 100%;
+        }
+
+        td{text-align: center;}
+
+    </style>
+</head>
+<body>
+    <table border="1">
+        <caption> 00고등학교 </caption>
+        <tr>
+            <th colspan="5">시간표</th>
+        </tr>
+
+        <tr>
+            <th>mon</th>
+            <th>tue</th>
+            <th>wed</th>
+            <th>thu</th>
+            <th>fri</th>
+        </tr>
+
+        <tr>
+            <td> 국어 </td>
+            <td> 수학 </td>
+            <td> 영어 </td>
+            <td> 과학 </td>
+            <td rowspan="3"> 휴강 </td>
+        </tr>
+
+        <tr>
+            <th colspan="4"> 점심시간 </th>
+        </tr>
+
+        <tr>
+            <td> 국어 </td>
+            <td> 수학 </td>
+            <td> 영어 </td>
+            <td> 과학 </td>
+        </tr>
+
+
+    </table>
+</body>
+</html>
