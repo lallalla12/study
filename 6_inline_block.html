@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>6_inline_block</title>
+    <style>
+        span.a{
+            display: inline;
+            width: 100px;
+            height: 60px;
+            padding: 5px;
+            border: 1px solid black;
+            background-color: lightpink;
+        }
+
+        span.b{
+            display: inline-block;
+            width: 100px;
+            height: 60px;
+            padding: 5px;
+            border: 1px solid black;
+            background-color: lightblue;
+        }
+
+        span.c{
+            display: block;
+            width: 100px;
+            height: 60px;
+            padding: 5px;
+            border: 1px solid black;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <span class="a">INLINE</span>
+        <span class="a">INLINE</span>
+    </p>
+
+    <p>
+        <span class="b">INLINE_BLOCK</span>
+        <span class="b">INLINE_BLOCK</span>
+    </p>
+
+    <p>
+        <span class="c">BLOCK</span>
+        <span class="c">BLOCK</span>
+    </p>
+</body>
+</html>

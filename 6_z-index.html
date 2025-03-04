@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>6_relative</title>
+    <style>
+        #one{
+            position: absolute;
+            top: 0px; left: 0px;
+            width: 100px; height: 100px;
+            background-color: lightcyan;
+            z-index: 200;
+        }
+
+        #two{
+            position: absolute;
+            background-color: lightpink;
+            top: 30px; left: 30px;
+            width: 100px; height: 100px;
+            z-index: 100;
+        }
+
+        #three{
+            position: absolute;
+            background-color: lightgreen;
+            top: 60px; left: 60px;
+            width: 100px; height: 100px;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <p id="one">box #1</p>
+    <p id="two">box #2 </p>
+    <p id="three">box #3</p>
+</body>
+</html>

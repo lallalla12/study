@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>6_layout2</title>
+    <style>
+        body{
+            background-color: lavender;
+            margin: 0px;
+        }
+
+        header{
+            background-color: lightblue;
+            text-align: center;
+            padding: 5px;
+        }
+
+        h1{
+            margin: 0px;
+        }
+
+        section#main{
+            float: right;
+            width: 70%;
+            height: 300px;
+            background-color: azure;
+        }
+
+        nav{
+            background-color: lightcyan;
+            float: left;
+            width: 30%;
+            height: 300px;
+        }
+
+        footer{
+            text-align: center;
+            background-color: aliceblue;
+            padding: 10px;
+            clear: both;
+            margin: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Blog Page</h1>
+    </header>
+    
+    <nav>
+        <h2>links</h2>
+        <ul>
+            <li><a href="#">W3C</a></li>
+            <li><a href="#">MOZILLA</a></li>
+            <li><a href="#">HTML Dogs</a></li>
+        </ul>
+        <img width="85" height="85" src="../image/bono.gif" alt="보노보노">
+        <figcaption>보노보노</figcaption>
+    </nav>
+
+    <section id="main">
+        <article>
+        <h1>Semantic Tags</h1>
+        <p>시멘틱 요소들은 브라우저에게 요소의 의미나 목적을 명확하게 알려주는 요소</p>
+        </article>
+
+        <article>
+            <h1>div와 span</h1>
+            <p>div은 'divide'의 약자로서 페이지를 논리적인 섹션으로 분리하는데 사용되는 태그이다.
+                span 요소는 인라인 요소로서 텍스트를 위한 컨테이너로 사용할 수 있다.
+            </p>
+        </article>
+    </section>
+
+    <footer>
+        Copyright (c) 2023 Hong
+    </footer>
+    
+</body>
+</html>

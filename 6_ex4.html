@@ -1,0 +1,50 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>6_relative</title>
+    <style>
+
+        div{
+            border: 1px;
+        }
+
+        #one{
+            position: relative;
+            background-color: lightblue;
+            width: 200px;
+            height: 50px;
+        }
+
+        #two{
+            position: relative;
+            background-color: lightpink;
+            left: 200px; top: -50px;
+            width: 200px;
+            height: 50px;
+        }
+
+        #three{
+            position: relative;
+            background-color: lightgreen;
+            width: 200px; top: -50px;
+            height: 50px;
+        }
+
+        #four{
+            position: relative;
+            background-color: lightgray;
+            width: 200px; height: 50px; 
+            top: -100px; left:200px ;
+             
+        }
+    </style>
+</head>
+<body>
+    <div id="one">left:0;top:0;</div>
+    <div id="two"> right:0;top:0;</div>
+    <div id="three">left:0;bottom:0;</div>
+    <div id="four">right:0;bottom:0;</div>
+</body>
+</html>

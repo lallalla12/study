@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>6_css_anim3</title>
+    <style>
+        div {
+            width: 100px;
+            height: 50px;
+            color: white;
+            position: relative;
+            margin: 10px;
+            animation: myanim 5s infinite;
+        }
+
+        #div1 {
+            animation-timing-function: linear;
+            background-color: lightblue;
+        }
+
+        #div2 {
+            animation-timing-function: ease;
+            background-color: lightcoral;
+        }
+
+        #div3 {
+            animation-timing-function: ease-in;
+            background-color: lightcyan;
+        }
+
+        #div4 {
+            animation-timing-function: ease-out;
+            background-color: lightgreen;
+        }
+
+        @keyframes myanim{
+            form { left: 0px;}
+            to { left: 500px;}
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">linear speed</div>
+    <div id="div2">ease speed</div>
+    <div id="div3">ease-in speed</div>
+    <div id="div4">ease-out speed</div>
+</body>
+</html>

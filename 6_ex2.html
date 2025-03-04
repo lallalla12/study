@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>6_ex2</title>
+    <style>
+        
+        div{
+            border: 2px solid black;
+            width: 500px;
+            height: 150px;
+        }
+        
+        p{
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            margin: 0;
+        }
+        
+        #fix{
+            position: fixed;
+            background-color: lightgreen;
+            z-index: 1;
+        }
+        #first{
+            position: absolute;
+            top: 40px;
+            left: 60px;
+            background-color: lightblue;
+        }
+        #second{
+            position: absolute;
+            top: 40px;
+            left: 200px;
+            background-color: lavender;
+        }
+        #third{
+            position: absolute;
+            top: 40px;
+            left: 350px;
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p id="fix">Fixed Box</p>
+        <p id="first">First Box</p>
+        <p id="second">Second Box</p>
+        <p id="third">Third Box</p> 
+    </div>
+</body>
+
+</html>
