@@ -1,0 +1,47 @@
+body{
+    font-family: "굴림체";
+}
+nav ul{
+    list-style: none;
+    text-align: center;
+    border-top: 1px solid pink;
+    border-bottom: 1px solid pink;
+    padding: 10px 0; 
+    text-transform: uppercase;
+    
+}
+
+nav li{
+    display: inline; /*리스트 항목들이 한 줄에 차례로 배치*/
+}
+
+nav a {
+    
+    color: lightblue;
+    text-decoration: none;
+}
+
+aside ul{
+    list-style: none;
+    margin-top: 0;
+    padding-left: 0;
+    background-color: lightblue;
+    width: 150px;
+}
+
+aside a{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    
+}
+
+aside li:hover{
+    background-color: pink;
+}
+
+
+h4 {
+    margin-bottom: 0;
+}
+
