@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_ex2</title>
+    <style>
+        #box{
+            background-color: lightblue;
+            color: white;
+            height: 50px;
+        }
+        .Box1 {
+            grid-area: Box1; /*.BOX1{ grid-column: col / span 2;     grid-row:row;*/
+        }
+        .Box2 {
+            grid-area: Box2; /*.BOX2{ grid-column: col 3 / span 2;     grid-row:row;*/
+        }
+        .Box3 {
+            grid-area: Box3; /*.BOX3{ grid-column: col;     grid-row:row 2;*/
+        }
+        .Box4 {
+            grid-area: Box4; /*.BOX4{ grid-column: col 2 / span 3;     grid-row:row 2;*/
+        }
+        .Box5 {
+            grid-area: Box5; /*.BOX5{ grid-column: col / span 4;     grid-row:row 2;*/
+        }
+
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr ; /*repeat(4[col],100px)*/
+            grid-template-rows: 1fr 1fr 1fr; /*repeat(3[row],auto)*/
+            grid-template-areas: 
+            'Box1 Box1 Box2 Box2'
+            'Box3 Box4 Box4 Box4'
+            'Box5 Box5 Box5 Box5';
+            gap: 5px;
+            padding: 10px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="box" class="Box1">Box A</div>
+        <div id="box" class="Box2">Box B</div>
+        <div id="box" class="Box3">Box C</div>
+        <div id="box" class="Box4">Box D</div>
+        <div id="box" class="Box5">Box E</div>
+    </div>
+</body>
+</html>

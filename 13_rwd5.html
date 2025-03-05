@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_rwd5</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        .left{
+            background-color: lightblue;
+            float: left;
+            width: 20%;
+        }
+        .main{
+            background-color: lightcoral;
+            float: left;
+            width: 60%;
+        }
+        .right{
+            background-color: lightgreen;
+            float: left;
+            width: 20%;
+        }
+        @media screen and (max-width:500px){
+            .left,
+            .main,
+            .right{
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="left"> <p>왼쪽 메뉴</p></div>
+    <div class="main"> <p>메인 콘텐츠</p></div>
+    <div class="right"> <p>오른쪽 메뉴</p></div>
+</body>
+</html>

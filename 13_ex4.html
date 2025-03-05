@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_ex4</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas:
+            'header header header header'
+            'menu main main sidebar2'
+            'footer footer footer footer';
+            gap: 10px;
+            padding: 5px;
+        } 
+
+        #wow {
+            height: 50px;
+        }
+
+        .header{
+            grid-area: header;
+            background-color: red;
+            color: white;
+        }
+        .menu{
+            grid-area: menu;
+            background-color: blue;
+            color: white;
+        }
+        .main{
+            grid-area: main;
+            background-color: blue;
+            color: white;
+        }
+        .sidebar2{
+            grid-area: sidebar2;
+            background-color: green;
+        }
+        .footer{
+            grid-area: footer;
+            background-color: red;
+            color: white;
+        }
+
+        @media (max-width:800px){
+            .container{
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-template-areas:
+            'header header header header'
+            'menu main main main'
+            'sidebar2 sidebar2 sidebar2 sidebar2'
+            'footer footer footer footer';
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="wow" class="header">Header</div>
+        <div id="wow" class="menu"> Menu</div>
+        <div id="wow" class="main">Main ContentMain ContentMain
+            ContentMain ContentMain
+            ContentMain ContentMain
+            ContentMain ContentMain
+        </div>
+        <div id="wow" class="sidebar2">Sidebar 2</div>
+        <div  id="wow" class="footer">Footer</div>
+
+    </div>
+</body>
+</html>

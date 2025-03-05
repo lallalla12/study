@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_rwd8</title>
+    <style>
+        .item1{
+            grid-area: header;
+            background-color: lightblue;
+        }
+        .item2{
+            grid-area: menu;
+            background-color: lightcoral;
+        }
+        .item3{
+            grid-area: article;
+            background-color: lightgoldenrodyellow;
+        }
+        .item4{
+            grid-area: sidebar;
+            background-color: lightgray;
+        }
+        .item5{
+            grid-area: footer;
+            background-color: lightgreen;
+        }
+
+        .container{
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas: 
+            'header header header'
+            'menu article sidebar'
+            'menu footer footer';
+            gap: 5px;
+            background-color: azure;
+            padding: 5px;
+            display: grid;
+            height: 300px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item1">Header</div>
+        <div class="item2">Menu</div>
+        <div class="item3">Main</div>
+        <div class="item4">SideBar</div>
+        <div class="item5">Footer</div>
+    </div>
+</body>
+</html>
