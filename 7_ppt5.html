@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calc(){
+            let x = document.getElementById("x").value;
+            for(let i=1; i<=9; i++){
+                document.write(x+"X" + i + "=" + x*i+"<br>");
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        단 입력 : <input id="x"> <br>
+        <input type="button" value="계산" onclick="calc()">
+    </form>
+</body>
+</html>
