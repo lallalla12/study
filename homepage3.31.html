@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>homepage3.31</title>
+    <style>
+
+        h1 a {
+            text-decoration: none;
+            color: rgb(148, 200, 250);
+        }
+
+        nav ul{
+            list-style: none;
+            text-align: center;
+            border-top: 1px solid pink;
+            border-bottom: 1px solid pink;
+            padding: 10px 0; 
+            text-transform: uppercase;
+            
+        }
+
+        nav li{
+            display: inline; /*리스트 항목들이 한 줄에 차례로 배치*/
+        }
+
+        nav a {
+            
+            color: lightblue;
+            text-decoration: none;
+        }
+
+        #left {
+            float: left;
+        }
+        
+        #left ul{
+            list-style: none;
+            margin-top: 0;
+            padding-left: 0;
+            background-color: lightblue;
+            width: 150px;
+            text-align: center;
+            
+        }
+
+        #left a{
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            
+        }
+
+        #left li {
+            height: 50px;
+        }
+
+        #left li:hover{
+            background-color: pink;
+        }
+
+
+        h4 {
+            margin-bottom: 0;
+        }
+
+        #right{
+            float: right;
+        }
+
+        #main{
+            float: left;
+            
+        }
+
+        #main a{
+            padding: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>
+           <a href="homepage3.31.html">현정정's GALLERY</a>
+        </h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="homepage3.31.html">WRITE</a></li>
+            
+        </ul>
+    </nav>
+
+    <div id="left">
+        <h4>카테고리</h4>
+        <ul>
+            <li><a target="iframe1"href="https://namu.wiki/w/%EB%B3%B4%EB%85%B8%EB%B3%B4%EB%85%B8(%EB%B3%B4%EB%85%B8%EB%B3%B4%EB%85%B8)">KOR</a></li>
+            <li><a target="iframe1"href="https://namu.wiki/w/%ED%8F%AC%EB%A1%9C%EB%A6%AC">JAP</a></li>
+            <li><a target="iframe1"href="https://namu.wiki/w/%EC%95%BC%EC%98%B9%EC%9D%B4%ED%98%95">UK</a></li>
+            <li><a target="iframe1"href="https://namu.wiki/w/%EC%95%BC%EC%98%B9%EC%9D%B4%ED%98%95">FR</a></li>
+            <li><a target="iframe1"href="https://namu.wiki/w/%EC%95%BC%EC%98%B9%EC%9D%B4%ED%98%95">Viet</a></li>
+        </ul>
+    </div>
+
+    <div id="main">
+        <div id="article">
+            <a href="#"><img src="../image/bono.gif" width="200px" height="200px"></a>
+            <a href="#"><img src="../image/poro.gif" width="200px" height="200px"></a>
+            <a href="#"><img src="../image/buri.gif" width="200px" height="200px"></a>
+        </div>
+    </div>
+
+    <div id="right">
+        
+        <h4>Log In</h4>
+        <form>
+            아이디 <input type="text" name="id"> <br>
+            패스워드 <input type="password" name="password"> <br>
+            <input type="submit" value="로그인"> 
+            <input type="reset" value="초기화">
+        </form>
+    
+
+    
+        <a href="5_register.html">회원가입</a>
+        <a href="5_miniproject.html">비밀번호분실</a>
+    </div>
+
+</body>
+</html>
