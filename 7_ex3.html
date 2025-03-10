@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+</head>
+<body>
+
+    <h1>프롬프트 연습</h1>
+    <input type="button" value="이름 입력" onclick="sub()">
+    <p id="content">어쩌고 저쩌고</p>
+    
+    <script>
+
+        function sub() {
+         let name = prompt('이름을 입력하시오');
+         document.getElementById("content").innerHTML = "Hello " + name + " 안녕하세요?";
+     }
+         
+     </script>
+
+</body>
+</html>

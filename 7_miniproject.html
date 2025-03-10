@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>숫자 맞추기 게임</h1>
+    <p>이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다. 숫자는 1부터 100사이에 있습니다.</p>
+
+    숫자 : <input type="text" id="number">
+    <input type="button" onclick="submit();" value="확인"><br>
+    추측횟수 : <input type="text" id="guess"> <br>
+    힌트 : <input type="text" id="hint">
+
+    <script>
+        let x = Math.floor(Math.random()*256);
+        
+        let count = 1;
+        function submit(){
+            let number = document.getElementById("number").value; //function 밖에 넣게되면 값을 가져오지못함
+            
+
+            if(x<number){
+                document.getElementById("hint").value="낮습니다.";
+                document.getElementById("guess").value = count;
+                count++;
+            }
+            else if(number==x){
+                document.getElementById("hint").value = "정답";
+                document.getElementById("guess").value = count;
+                count++;
+                
+            }
+            else{
+                document.getElementById("hint").value="높습니다.";
+                document.getElementById("guess").value = count;
+                count++;
+            }
+        }
+        
+        
+        console.log(x);
+        
+    </script>
+</body>
+</html>
