@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    가는 편 : <input type="date" id="go1"> 오는 편 : <input type="date" id="come1"> 
+    <input type="button" id="re" value="항공권 예약" onclick="input()">
+    <p id="day"></p>
+
+    
+    <script>
+        function input(){
+            let go = new Date(document.getElementById("go1").value);
+            let come = new Date(document.getElementById("come1").value);
+
+            let diff = come.getTime() - go.getTime() ;
+            let diff_days = diff / (1000 * 3600 * 24);
+            days = diff_days+1
+
+            //document.write("예약일 : " + diff_days + "박" + days + "일")
+            document.getElementById("day").innerHTML="예약일 : " + diff_days + "박" + days + "일"
+            console.log(go)
+            console.log(come)
+            console.log(diff_days)
+            
+        }
+        
+        
+    </script>
+    
+</body>
+</html>
