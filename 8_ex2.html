@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    구입날짜 : <input type="date" id="date1">
+    <input type="button" value="검사" id="result" onclick="result()">
+
+    <script>
+        
+        function result(){
+            let buy = new Date(document.getElementById("date1").value);
+            let today = new Date();
+
+            let diff = today.getTime() - buy.getTime();
+            let diff_days = diff / (1000*3600*24);
+            console.log(diff_days)
+
+            if(diff_days>30){
+                alert("교환 기한이 지났습니다.");
+            }
+        }
+        
+    </script>
+</body>
+</html>

@@ -11,38 +11,48 @@
     </style>
     <script>
         function checkID(){
-            let i = document.getElementById("id").value;
-            let p = document.getElementById("pw").value;
+            let id = document.getElementById("id").value;
+            let pw = document.getElementById("pw").value;
+            let pw2 = document.getElementById("pw2").value;
             
-            if (i.length<8 || 12<i.length){
+            if (id.length<8 || 12<id.length){
                 document.getElementById("id1").innerHTML="ID 다시 입력하세요."
+                document.getElementById("id1").style.color="red"
             }
             else{
                 document.getElementById("id1").innerHTML="ID로 적합합니다."
+                document.getElementById("id1").style.color="green"
+                
             }
 
-            if (p.length<10 || 20<p.length){
+            if (pw.length<10 || 20<pw.length){
                 document.getElementById("pw1").innerHTML="PW 다시 입력하세요."
+                document.getElementById("pw1").style.color="red"
             }
             else{
                 document.getElementById("pw1").innerHTML="PW로 적합합니다."
+                document.getElementById("pw1").style.color="green"
             }
 
-            if (pw == pw2){
+            if (pw == pw2 ){
                 document.getElementById("pw3").innerHTML="일치합니다"
+                document.getElementById("pw3").style.color="green"
             }
             else{
                 document.getElementById("pw3").innerHTML="불일치합니다."
+                document.getElementById("pw3").style.color="red"
             }
 
+            console.log(pw)
+            console.log(pw2)
         }
     </script>
 </head>
 <body>
     <h1>string 객체</h1>
     ID : <input type="text" id="id"> <p id="id1">ID는 8~12자로 입력하셔야합니다.</p><br>
-    PW : <input type="text" id="pw"> <p id="pw1">PW는 10~20자로 입력하셔야합니다.</p><br>
-    PW 재확인: <input type="text" id="pw2"> <p id="pw3">PW와 PW재확인의 글자가 일치해야합니다.</p><br>
+    PW : <input type="password" id="pw"> <p id="pw1">PW는 10~20자로 입력하셔야합니다.</p><br>
+    PW 재확인: <input type="password" id="pw2"> <p id="pw3">PW와 PW재확인의 글자가 일치해야합니다.</p><br>
     <input type="button" id="submit" value="확인" onclick="checkID()">
 </body>
 </html>

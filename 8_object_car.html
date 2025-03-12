@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //생성자를 정의
+        function Car(model, speed, color){
+            this.model = model;
+            this.speed = speed;
+            this.color = color;
+            this.brake = function(){
+                this.speed -= 10;
+            }
+            this.accel = function(){
+                this.speed += 10;
+            }
+        }
+        //객체를 생성
+        myCar = new Car("520d", 60, "red"); //model = 520d speed = 60 color = red
+
+        //객체의 멤버를 사용
+        document.write("모델 : "+ myCar.model + "속도 : " + myCar.speed + "<br>");
+        myCar.accel(); // 속도 10 줄어듬
+        
+        document.write("모델 : "+ myCar.model + "속도 : " + myCar.speed + "<br>");
+        myCar.brake(); //속도 10 늘어남
+
+        document.write("모델 : "+ myCar.model + "속도 : " + myCar.speed + "<br>");
+    
+    </script>
+</body>
+</html>

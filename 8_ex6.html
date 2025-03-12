@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="content"></p>
+    <script>
+        let today = new Date();
+        month = today.getMonth();
+
+        console.log(month)
+
+        if(month == 0){
+            document.getElementById("content").innerHTML = "JAN"
+        }else if(month == 1){
+            document.getElementById("content").innerHTML = "FEB"
+        }else if(month == 2){
+            document.getElementById("content").innerHTML = "MAR"
+        }else if(month == 3){
+            document.getElementById("content").innerHTML = "AP"
+        }else if(month == 4){
+            document.getElementById("content").innerHTML = "MAY"
+        }else if(month == 5){
+            document.getElementById("content").innerHTML = "JUN"
+        }else if(month == 6){
+            document.getElementById("content").innerHTML = "JULY"
+        }else if(month == 7){
+            document.getElementById("content").innerHTML = "AUG"
+        }else if(month == 8){
+            document.getElementById("content").innerHTML = "STEM"
+        }else if(month == 9){
+            document.getElementById("content").innerHTML = "OCT"
+        }else if(month == 10){
+            document.getElementById("content").innerHTML = "NOV"
+        }else{
+            document.getElementById("content").innerHTML = "DECEM"
+        }
+
+    </script>
+</body>
+</html>

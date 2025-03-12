@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="time"> </p>
+    <script>
+         
+         function test(){
+        let sum = 0;
+        
+        
+        
+        for(i=0;i<=1000000;i++){
+            sum+=i;
+
+        }
+        
+        }
+        
+        let st = new Date();
+        test();
+        
+        let et = new Date();
+
+
+        document.write(et - st + "밀리초가 걸렸음!");
+    </script>
+</body>
+</html>

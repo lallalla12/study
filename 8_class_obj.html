@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="test"></h2>
+    <script>
+        class Dog{
+            // 생성자 함수
+            constructor(name, adoptedYear){
+                // 속성 정의
+                this.name = name;
+                this.adoptedYear = adoptedYear;
+            }
+            // 메소드 정의
+            age() {
+                let date = new Date();
+                // 현재 연도에서 입양된 연도를 빼서 나이를 계산
+                return date.getFullYear() - this.adoptedYear;
+
+            }
+        }
+        // 객체 생성
+        let myDog = new Dog("Mary", 2013);
+        document.getElementById("test").innerHTML="나의 강아지 이름은 " +myDog.name + "이고, 나이는" +myDog.age() + "살입니다.";
+    </script>
+</body>
+</html>

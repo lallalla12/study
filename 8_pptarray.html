@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <p id="result"></p> 
+    
+    <script>
+        // 리터럴로 배열 생성
+        //let array1 = [60,74,93,88,83]
+        //Array객체로 배열 생성
+        let array1 = new Array(60,74,93,88,83);
+
+        
+        let sum = 0;
+        for (i=0; i<array1.length; i++){
+            sum += array1[i];
+        }
+
+        document.getElementById("result").innerHTML = "총점 : " + sum + "<br>" + "평균 : " + sum/array1.length 
+
+
+        /*
+        let x = 60+74+93+88+83;
+        let y = x/5
+        document.write("총점 : " + x + "<br>");
+        document.write("평균 : " + y);
+        */
+        
+    </script>
+
+
+        
+</body>
+</html>
