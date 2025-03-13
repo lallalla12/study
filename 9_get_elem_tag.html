@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>List item1</li>
+        <li>List item2</li>
+        <li>List item3</li>
+        <li>List item4</li>
+        <li>List item5</li>
+    </ul>
+
+        <script>
+            // 문서 내의 첫번째 <ul> 요소를 찾는다.
+            let list = document.getElementsByTagName('ul')[0];
+            // list 안에서, <ul>안에서 <li>요소들을 전부 찾는다.
+            let allItmes = list.getElementsByTagName('li');
+            
+            
+            for (let i=0, length = allItmes.length; i<length; i++){
+                console.log(length)
+                alert(allItmes[i].innerHTML);
+            }
+        </script>
+</body>
+</html>

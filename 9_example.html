@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="a" class="b">첫번째 p태그</p>
+    <p id="a" class="b">두번째 p태그</p>
+    <p id="a" class="b">세번째 p태그</p>
+    <p id="a" class="b">네번째 p태그</p>
+    <p id="a" class="b">다섯번째 p태그</p>
+    <p id="a" class="b">여섯번째 p태그</p>
+    <p id="a">일곱번째 p태그</p>
+    <p id="a">여덟번째 p태그</p>
+
+    <script>
+        let a = document.getElementById("a");
+
+        let p = document.getElementsByTagName("p");
+        // console.log(a) //첫번째 p태그만 가져옴
+        /*console.log(p[0])
+        console.log(p[1])
+        console.log(p[2])
+        console.log(p[3])
+        console.log(p[4])
+        console.log(p[5])*/
+        let b = document.getElementsByClassName("b")
+        console.log(b)
+    </script>
+</body>
+</html>

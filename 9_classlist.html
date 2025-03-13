@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .style1{
+            background-color: blue;
+            color:aliceblue;
+            height: 60px;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <button onclick="sub()">요소에 클래스 추가</button>
+    <div id="special">
+        <p> This is a paragraph.</p>
+    </div>
+
+    <script>
+        function sub() {
+            document.getElementById("special").classList.add("style1");
+        }
+    </script>
+</body>
+</html>

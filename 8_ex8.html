@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="출력" onclick="array()">
+    <p id="out"></p>
+    <script>
+        
+    
+
+        function array(){
+            let arr = ["사과", "오렌지", "귤", "당근", "케일"];
+            let x = Math.floor(Math.random()*5); //소수점까지 랜덤으로 가져오기때문에 floor를 사용해서 소수점내림
+            document.getElementById("out").innerHTML = arr[x];
+
+            console.log(x)
+
+        }
+
+    </script>
+</body>
+</html>

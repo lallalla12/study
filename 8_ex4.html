@@ -14,7 +14,7 @@
     
 
        
-        function strCap(){
+        function strCap(str){
             str = document.getElementById("input").value
             let a = str.charAt(0).toUpperCase()
             let b = str.slice(1,str.length)
@@ -22,9 +22,14 @@
             console.log(a)
             console.log(b)
             console.log(c)
-            document.getElementById("out").innerHTML =c
+            document.getElementById("out").innerHTML = c
         }
         
+        /*function strCap(str){
+            return str.charAt(0).toUpperCase() + str.substring(1);
+        }
+        document.write(strCap("hong"));
+        */
         
         
         

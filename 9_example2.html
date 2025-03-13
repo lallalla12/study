@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="a" class="b">첫번째 p태그</p>
+    <p id="a" class="b">두번째 p태그</p>
+    <p id="a" class="b">세번째 p태그</p>
+    <p id="a" class="b">네번째 p태그</p>
+    <p id="a" class="b">다섯번째 p태그</p>
+    <p id="a" class="b">여섯번째 p태그</p>
+    <p id="a">일곱번째 p태그</p>
+    <p id="a">여덟번째 p태그</p>
+
+    <script>
+        let a = document.querySelector("#a") //id로 선택하기
+        //console.log(a)
+        let p = document.querySelectorAll("p") //태그로 선택하기
+        let b = document.querySelectorAll(".b") // class로 선택하기
+        console.log(b)
+        
+    </script>
+</body>
+</html>
