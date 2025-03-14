@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>다음 번에 마트가면 사와야 할 것(동적 쇼핑 리스트)</h1>
+    항목을 입력하시오 : <input type="text" id="item">
+    <input type="button" onclick="addit()" value="항목 추가">
+    <ul id="result">
+        
+
+        
+    </ul>
+    <script>
+    
+        
+        function addit(){
+            let item = document.getElementById("item")
+            let ul = document.getElementById("result")
+            let li = document.createElement("li")
+            let span = document.createElement("span")
+            let button = document.createElement("button")
+            span.innerHTML = item.value;
+            li.appendChild(span);
+            button.innerHTML = "항목 삭제";
+            li.appendChild(button);
+
+            ul.appendChild(li);
+
+            
+            
+            button.addEventListener("click",function(){ul.removeChild(li)})
+        }
+
+        
+               
+            
+    </script>
+</body>
+</html>

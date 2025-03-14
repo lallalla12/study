@@ -12,7 +12,7 @@
         }
     </style>
     <script>
-        function add(){
+       /* function add(){
             let number1, number2;
             number1 = parseFloat(document.getElementById("number1").value);
             number2 = parseFloat(document.getElementById("number2").value);
@@ -35,16 +35,38 @@
             number1 = parseFloat(document.getElementById("number1").value);
             number2 = parseFloat(document.getElementById("number2").value);
             document.getElementById("result").value=number1/number2;
+        }*/
+
+        function calculator(op){
+            let number1, number2;
+            number1 = parseFloat(document.getElementById("number1").value);
+            number2 = parseFloat(document.getElementById("number2").value);
+            if(op=="+"){
+                document.getElementById("result").value=number1+number2;
+            }else if(op=="-"){
+                document.getElementById("result").value=number1-number2;
+            }else if(op=="*"){
+                document.getElementById("result").value=number1*number2;
+            }else{
+                if(number1 == 0 || number2 == 0){
+                alert("숫자 0을 나눌 수 없습니다.");
+            }else{
+                document.getElementById("result").value=number1/number2;
+            }
+
         }
+    }
+
+        
     </script>
 </head>
 <body>
     숫자 1 : <input type="text" id="number1" value="9">
     숫자 2 : <input type="text" id="number2" value="6">
-    <input type="button" value="+" onclick="add()" class="button">
-    <input type="button" value="-" onclick="minus()" class="button">
-    <input type="button" value="*" onclick="multi()" class="button">
-    <input type="button" value="/" onclick="div()" class="button"> <br>
+    <input type="button" value="+" onclick="calculator('+')" class="button">
+    <input type="button" value="-" onclick="calculator('-')" class="button">
+    <input type="button" value="*" onclick="calculator('*')" class="button">
+    <input type="button" value="/" onclick="calculator('/')" class="button"> <br>
     연산결과:<input type="text" id="result" value="">
 </body>
 </html>

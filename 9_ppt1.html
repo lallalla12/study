@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    갯수<input type="text" id="get"><button onclick="updown('up')">+</button><button onclick="updown('down')">-</button>
+    <script>
+        function updown(x){
+            if(x =="up"){
+                let y = document.getElementById("get").value
+                y++
+                console.log(y)
+                document.getElementById("get").innerHTML=y
+                
+            }else{
+                let z = document.getElementById("get").value
+                z--
+                console.log(z)
+                document.getElementById("get").innerHTML=z
+            }
+
+        }
+    </script>
+
+</body>
+</html>

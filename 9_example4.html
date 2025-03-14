@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        let div = document.createElement("div")
+        div.innerHTML = "div 입니다"
+        let span = document.createElement("span")
+        span.innerHTML = "span 입니다"
+        let p = document.createElement("p")
+        p.innerHTML = "p 입니다"
+
+        document.body.appendChild(div) // 막내 자식으로 추가
+
+        document.body.prepend(p)
+
+        document.body.insertBefore(span,div)
+        div.setAttribute("id","aaaa")
+        div.setAttribute("class","bbbb")
+    </script>
+</body>
+</html>

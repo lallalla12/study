@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function pic(){
+            if(document.getElementById("img").src.match("../image/bono.gif")){
+                document.getElementById("img").src="../image/poro.gif"
+            }else{
+                document.getElementById("img").src="../image/bono.gif"
+            }
+            
+        }
+    </script>
+
+    <img src="../image/bono.gif" id="img" onclick="pic()">
+    <p>사진을 클릭하여 보세요!</p>
+</body>
+</html>

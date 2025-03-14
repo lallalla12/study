@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../image/bobo.gif" id="bono"><br>
+    <input type="button" value="왼쪽 이동" onclick="move('left')">
+    <input type="button" value="오른쪽 이동" onclick="move('right')">
+
+    <script>
+        /*function left(){
+            document.getElementById("bono").style.position = "relative"
+            document.getElementById("bono").style.left = "0px"
+            
+        }
+        function right(){
+            document.getElementById("bono").style.position = "relative"
+            document.getElementById("bono").style.left = "300px"*/
+
+            let moveno = 600;
+            function move(movetext){
+            if(movetext == "right"){
+                moveno += 30
+                document.getElementById("bono").style.left = moveno + "px"
+                 }else{
+                moveno -= 30
+                document.getElementById("bono").style.left = moveno + "px"
+                 }
+            }
+            
+        
+    </script>
+</body>
+</html>
