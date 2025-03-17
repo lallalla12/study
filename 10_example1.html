@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 500px;
+            height: 50px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">마우스를 올려주세요</div>
+
+    <script>
+        document.getElementById("div1").addEventListener("mouseover",function(){
+            document.getElementById("div1").style.backgroundColor = "yellow";
+        })
+    </script>
+</body>
+</html>

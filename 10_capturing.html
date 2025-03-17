@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p,div {
+            margin: 10px;
+            border: 1px solid pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"> DIV 
+     <p id="p1">P</p>
+    </div>
+    <script>
+        let elem1 = document.getElementById("div1");
+        elem1.addEventListener("click",function() {alert('캡처링 div');}, true);
+        elem1.addEventListener("click", function(){alert('버블링 div');});
+        elem2=document.getElementById("p1");
+        elem2.addEventListener("click",function() {alert('캡처링 p');}, true);
+        elem2.addEventListener("click", function(){alert('버블링 p');});
+    </script>
+</body>
+</html>

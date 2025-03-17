@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{width: 500px;}
+        .a{display: inline-block;}
+        #b{width: 100px;}
+        #c{width: 80px;  margin: 0px auto;}
+    </style>
+</head>
+<body>
+    <input type="text" id="field1">
+    <input type="button" value="유효성 검증1" onclick="regChk()"><br>
+    <input type="text" id="field2">
+    <input type="button" value="유효성 검증2" onclick="regChk2()">
+<br>
+<br>
+<hr>
+
+    <h1> 회원가입</h1>
+    <table>
+        <tr>
+            <td>
+                아이디
+            </td>
+            <td>
+                <input type="text"><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                비밀번호
+            </td>
+            <td>
+                <input type="text"><br>
+            </td>
+        </tr>
+    </table>
+<br>
+<hr>
+<br>
+    <div>
+    <div class="a" id="b">아이디</div><div class="a" ><input type="text" id="id"></div>
+    <div id="idresult"> 6~20자의 영문 소문자, 숫자 조합만 사용 가능</div>
+    </div>
+    <div>
+    <div  class="a" id="b">비밀번호</div><div  class="a"><input type="text" id="pw"></div>
+    <div id="pwresult"> 6~20자의 영문 대/소문자, 숫자 , 특수문자 조합 가능</div>
+    </div>
+
+    <div id="container">
+    <div id="c"><input type="button" value="회원가입" onclick="RegChk()"></div>
+    </div>
+    
+<br>
+<hr>
+<br>
+<script>
+    function RegChk(){
+        
+    //아이디 정규식(필수 : 영문자로 시작하면서, 영문자+숫자 조합 6~20자)
+    let idexp = /^[a-z]+[a-z0-9]{6,20}/
+    //사용자가 입력한 아이디 값
+    let id = document.getElementById("id");
+    // id 결과 div
+    let idresult = document.getElementById("idresult");
+
+    // 비밀번호 정규식(필수 : 영문자로 시작하면서, 영문자+숫자+특수문자 조합 8~16자 )
+    let pwexp = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/
+    // 사용자가 입력한 비밀번호 값
+    let pw = document.getElementById("pw");
+    // pw 결과 div
+    let pwresult = document.getElementById("pwresult");
+
+    // 사용자가 입력한 아이디값(id.value)과 아이디 정규식(idexp)이 일치하면
+    if(id.value.match(idexp)){
+        // 사용가능합니다.
+        idresult.innerHTML ="사용가능합니다."
+    }
+    else{
+        // 그렇지 않으면 6~20자의 영문 소문자, 숫자조합만 사용 가능합니다
+        idresult.innerHTML ="6~20자의 영문 소문자, 숫자조합만 사용 가능"
+    }
+    
+    
+
+    // 사용자가 입력한 비밀번호 값과 비밀번호 정규식이 일치하면
+    if(pw.value.match(pwexp)){
+        // 사용가능합니다.
+        pwresult.innerHTML = "사용가능합니다."
+    }
+    else {
+        // 그렇지 않으면 6~20자의 영문 대/소문자, 숫자 , 특수문자 조합 가능
+        pwresult.innerHTML ="6~20자의 영문 대/소문자, 숫자 , 특수문자 조합 가능"
+    }
+}
+    
+</script>
+
+    <script>
+        function regChk(){
+            let field1 = document.getElementById("field");
+            let exp = /^\d{10}$/;
+            if(!exp.test(field1.value)){
+                alert("오류");
+                return false;
+            }else{
+                alert("검증 성공")
+                return true;
+            }
+        }
+        function regChk2(){
+            let field2 = document.getElementById("field2");
+            //정규식
+            let exp = /^[0-9]+$/
+            if(field2.value.match(exp)){
+                alert("전화번호 형식임.")
+                return true;
+            }else{
+                alert("다시 입력")
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
