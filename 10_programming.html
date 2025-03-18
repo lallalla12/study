@@ -4,30 +4,403 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    <style>
+        /*1번 css*/
+        #div1{
+            border: solid 8px black;
+            width: 100px; height: 265px;
+            border-radius: 100px;
+        }
+
+        #div2 {
+            border: solid 1px black;
+            width: 80px; height: 80px;
+            border-radius: 100px;
+            background-color: green;
+            position: relative;
+            left: 10px;
+            top: 10px;
+            
+        }
+
+        #div3 {
+            border: solid 1px black;
+            width: 80px; height: 80px;
+            border-radius: 100px;
+            background-color: yellow;
+            position: relative;
+            left: 10px;
+            top: 10px;
+        }
+
+        #div4 {
+            border: solid 1px black;
+            width: 80px; height: 80px;
+            border-radius: 100px;
+            background-color: red;
+            position: relative;
+            left: 10px;
+            top: 10px;
+        }
+        /*3번 css*/
+        #img1 {
+            width: 300px; height: 300px;
+            position: absolute;
+            left: 100px;
+            top: 600px;
+        }
+
+        #img2 {
+            width: 300px; height: 300px;
+            position: absolute;
+            left: 10px;
+            top: 500px;
+        }
+        
+    </style>
 </head>
 <body>
+    <!--1번-->
     <p id="time"></p>
     <input type="button" onclick="timestop()" value="시계 멈추기">
 
     <script>
-        let id;
-        function st(){
-            id = setInterval(setClock,1000);
+        let id = setInterval(Timer, 1000); //1초마다 주기적으로 Timer함수를 호출
+        function Timer(){
+            let now = new Date();
+            document.getElementById("time").innerHTML = now.toLocaleTimeString();
         }
-         function setClock(){
-                let now = new Date();
-                let s = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
-                document.getElementById('time').innerHTML = s;
-                setTimeout('setClock()', 1000);
-         }
-         setClock();
 
-         function timestop(){
-            clearInterval(id);
-         }
+        function timestop(){
+            clearInterval(id)
+        }
+        
     </script>
+
 <br>
 <hr>
 <br>
+    <!--2번-->
+    <div id="div1"> 
+        <div id="div2"></div>
+        <div id="div3"></div>
+        <div id="div4"></div>
+    </div>
+
+    <script>
+        //신호등 색상이 바뀌는 기능이 있는 함수선언(signalColorChange())
+        function signalColorChange(){
+            // 신호등 녹색
+            let div2 = document.getElementById("div2");
+            // 신호등 노란색
+            let div3 = document.getElementById("div3");
+            // 신호등 빨간색
+            let div4 = document.getElementById("div4");
+
+            setTimeout(function(){
+            // 신호등 녹색은 유지 
+            div2.style.backgroundColor="green";
+            // 신호등 노란색은 흰색
+            div3.style.backgroundColor="white";
+            // 신호등 빨간색은 흰색
+            div4.style.backgroundColor="white";
+            },1000) //1초 후 위 기능 실행
+
+            setTimeout(function(){
+            // 신호등 노랑색은 유지 
+            div3.style.backgroundColor="yellow";
+            // 신호등 녹색은 흰색
+            div2.style.backgroundColor="white";
+            // 신호등 빨간색은 흰색
+            div4.style.backgroundColor="white";
+            },2000) // 3초 후 위 기능 실행
+
+            setTimeout(function(){
+            // 신호등 빨간색 유지 
+            div4.style.backgroundColor="red";
+            // 신호등 노란색은 흰색
+            div3.style.backgroundColor="white";
+            // 신호등 녹색은 흰색
+            div2.style.backgroundColor="white";
+            },3000) // 5초 후 위 기능 실행
+        }
+        //signalColorChange()함수 호출
+        setInterval(signalColorChange,3000)
+        
+    </script>
+
+<br>
+<br>
+<br>
+<hr>
+<br>
+
+
+<!--3번-->
+<img src="../image/bono.gif" id="img1"> 
+<img src="../image/poro.gif" id="img2">
+
+<script>
+    let img1 = document.getElementById("img1");
+    let img2 = document.getElementById("img2");
+    let moving = false; //클릭하지 않았을 때는 움직이지 않도록 false값으로 초기화
+
+    // 첫번째 사진에 이벤트 추가
+    img1.addEventListener("mousedown",Click)
+    // 두번째 사진에 이벤트 추가
+    img2.addEventListener("mousedown",Click)
+
+    // 마우스 움직였을 때의 기능 추가
+    function move(e){
+        // 마우스의 현재 위치
+        // 현재 위치에 대한 x값 (clientX변수에 저장되어있음)
+        let newX = e.clientX;
+        // 현재 위치에 대한 y값 (clienty변수에 저장되어있음)
+        let newY = e.clientY;
+
+        // x값만큼 left에 적용
+        image.style.left = newX + "px";
+        // y값만큼 top에 적용
+        image.style.top = newY + "px";
+    }
+        //클릭이 있는 함수 선언
+        function Click(e){
+            // 클릭하지 않았을 때
+            if(moving){
+                document.removeEventListener("mousemove",move)
+                moving = !moving
+                return;
+
+            }
+            // 클릭했을 때
+            moving = !moving;
+            // 사용자가 클릭한 이미지(객체)를 움직여야함
+            image = this; 
+            document.addEventListener("mousemove",move)
+        }
+</script>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr>
+<br>
+
+<!--4번-->
+
+
+
+
+
+
+숫자를 입력하시오.<br>
+<input type="text" id="userInput">
+<input type="button" value="검사" id="btnId">
+
+<script>
+    let userInput = document.getElementById("userInput")
+    let button = document.getElementById("btnId")
+    button.addEventListener("click",function(){
+        if (isNaN(userInput.value)){
+            alert("숫자가 아닙니다")
+        }
+        
+    })
+    
+</script>
+
+
+<br>
+<hr>
+<br>
+
+
+<!--5번-->
+<h1>회원 신청서</h1>
+
+<form action="memberServer" method="post" onsubmit="return Validate()">
+<table>
+    <tr>
+        <td>이름*</td>
+        <td><input type="text" id="name"><label id="namemsg">이름은 2~4한글만 가능합니다</label></td>
+    </tr>
+    <tr>
+        <td>성별*</td>
+        <td>
+            <input type="radio" name="gender" value="man" > 남성 
+            <input type="radio" name="gender" value="female"> 여성
+            <label id="gendermsg">성별은 필수입니다.</label>
+        </td>
+    </tr>
+    <tr>
+        <td>휴대폰 번호 Phone*</td>
+        <td><input type="text" id="phoneNumber"> <label id="phonemsg">휴대폰 번호는 필수입니다.</label></td>
+    </tr>
+    <tr>
+        <td>이메일*</td>
+        <td><input type="email" id="email"> <label id="emailmsg">이메일은 필수입니다.</label></td>
+    </tr>
+    <tr>
+        <td>패스워드(6~8글자)*</td>
+        <td><input type="password" id="pw"> <label id="pwmsg">비밀번호는 필수입니다.</label></td>
+    </tr>
+    <tr>
+        <td>패스워드 검증*</td>
+        <td><input type="password" id="pwresult"><label id="pwresultmsg">비밀번호는 필수입니다.</label></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="submit"  value="제출"> <input type="reset" value="지우기"></td>
+    </tr>
+</table>
+
+</form>
+<script>
+    function Validate(){
+        // 이름 정규식
+        let nameReg = /^[가-힣]{2,4}$/
+        // 사용자가 입력한 이름
+        let name = document.getElementById("name");
+        // 이름 관련 msg
+        let namemsg = document.getElementById("namemsg")
+        // 성별 관련 msg
+        let gendermsg = document.getElementById("gendermsg");
+        // 휴대폰 관련 msg
+        let phonemsg = document.getElementById("phonemsg");
+        // 이메일 관련 msg
+        let emailmsg = document.getElementById("emailmsg")
+        // 비밀번호와 관련 msg
+        let pwmsg = document.getElementById("pwmsg")
+        // 비밀번호 검증 관련 msg
+        let pwresultmsg = document.getElementById("pwresultmsg")
+        //사용자가 입력한 휴대폰 번호
+        let phoneNumber = document.getElementById("phoneNumber")
+        // 사용자가 입력한 비밀번호
+        let pw = document.getElementById("pw")
+        // 사용자가 입력한 비밀번호 검증
+        let pwresult = document.getElementById("pwresult")
+        // 이메일 정규식
+        let emailReg = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-za-z0-9\-]+/
+        // 사용자가 입력한 이메일
+        let email = document.getElementById("email")
+        // 휴대폰 번호 정규식
+        let phoneReg = /^(01[016789]{1})-?[0-9]{3,4}-?[0-9]{4}$/
+        // 비밀번호 정규식
+        let pwReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+~`\-={}[\]:;"'<>,.?/\\]).{6,8}$/
+        
+        
+        // 이름 true / false
+        let namere;
+        // 성별 true / false
+        let genderre;
+        // 휴대폰번호 true / false
+        let numberre;
+        // 패스워드 true / false
+        let pwre;
+        // 패스워드 검증 true / false
+        let pwrere;
+        // 이메일 검증 true/false
+        let emailre;
+        
+        // 정규식 비교
+        if(name.value.match(nameReg)){
+            // 가능한 이름입니다
+            namemsg.innerHTML = "가능한 이름입니다"
+            namere = true;
+        }else{
+            //이름은 2~4한글만 가능합니다
+            namemsg.innerHTML = "이름은 2~4한글만 가능합니다"
+            namere = false;
+        }
+
+        // 성별은 필수이며,사용자가 선택했는지만 확인
+        let gender = document.getElementsByName("gender")
+        let genderval;
+        for(let i = 0; i<gender.length; i++){ //반복문으로 라디오버튼 전체를 검색 (남, 여)
+            if(gender[i].checked){ // 사용자가 선택한 것에 대해
+                genderval = gender[i].value; // 값을 저장
+                break;
+            }
+        }
+        if (genderval.length>0){
+            gendermsg.innerHTML = "성별을 선택하셨습니다"
+            genderre = true;
+            
+        }else{
+            gendermsg.innerHTML = "성별은 필수입니다."
+            genderre = false;
+
+        }
+
+        if(phoneNumber.value.match(phoneReg)){
+            // 가능한 번호입니다
+            phonemsg.innerHTML = "가능한 번호입니다"
+            numberre = true;
+        }else{
+            //이름은 2~4한글만 가능합니다
+            phonemsg.innerHTML = " 숫자만 입력하세요"
+            numberre = false;
+        }
+
+        if(email.value.match(emailReg)){
+            emailmsg.innerHTML =" 가능한 이메일 입니다"
+            emailre = true;
+        }else{
+            emailmsg.innerHTML ="이메일 형식으로 입력하세요"
+            emailre = false;
+        }
+
+        if(pw.value.match(pwReg)){
+            pwmsg.innerHTML = "가능한 비밀번호 입니다"
+            pwre = true;
+        }else{
+            pwmsg.innerHTML = "문자+숫자+특수문자 6~8글자로 입력하세요"
+            pwre = false;
+        }
+
+        if(pw.value === pwresult.value){
+            pwresultmsg.innerHTML = "일치합니다"
+            pwrere = true;
+        }else{
+            pwresultmsg.innerHTML = "비밀번호가 불일치합니다"
+            pwrere = false;
+        }
+
+        if(namere == true && genderre == true && numberre == true && 
+            pwre == true && pwrere == true && emailre == true){
+                return true;
+
+        }else{
+            return false;
+        }
+        
+    }
+    
+    
+    
+
+
+</script>
+
 </body>
 </html>
