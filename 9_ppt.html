@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{ 
+            display: inline;
+        }
+    </style>
+
+</head>
+<body>
+    <!--1번-->
+    갯수<input type="text" id="get"><button onclick="updown('up')">+</button>
+                                    <button onclick="updown('down')">-</button>
+    <script>
+        let get = document.getElementById("get")
+        function updown(x){
+            if(x =="up"){
+                get.value ++;
+                 
+            }else{
+                if(get.value != "1"){
+                    get.value --;
+                }
+
+            }
+            document.getElementById("get").innerHTML = "get"
+            
+        }
+    </script>
+<br>
+<hr>
+<br>
+
+    <!--2번-->
+    <script>
+        function getval(){
+            let list = document.getElementsByName("play");
+            document.getElementById("resultvalue").replaceChildren();
+
+            for(let i=0; i<list.length; i++){
+                if(list[i].checked){
+                    document.getElementById("resultvalue").innerHTML += list[i].value +"<br>";
+                    
+            }
+        }
+    }
+    </script>
+    취미
+    <ul>
+        <li><input type="checkbox" name="play" value="야구">야구</li>
+        <li><input type="checkbox" name="play" value="농구">농구</li>
+        <li><input type="checkbox" name="play" value="게임">게임</li>
+    </ul>
+    <input type="button" value="결과보기" onclick="getval()"><br>
+    결과값:<br>
+    <h1 id="resultvalue"></h1> 
+    
+    
+<br>
+<hr>
+<br>
+
+<!--3번-->
+글자수 세기<br>
+<textarea rows="20px" id="cnt" onkeyup="keyup()"></textarea><br>
+입력문자수 : <p id="num"></p>
+
+<script>
+    function keyup(){
+    let su = document.getElementById("cnt").value;
+    document.getElementById("num").innerHTML = su.length;
+    }
+</script>
+
+
+<br>
+<hr>
+<br>
+
+<!--4-1번-->
+<script>
+
+function calc(){
+    let in1 = parseFloat(document.getElementById("in1").value) // 문자열 숫자로 변환
+    let in2 = parseFloat(document.getElementById("in2").value)
+    console.log(in1)
+    console.log(in2)
+    document.getElementById("re1").value = in1 + in2
+
+    /* 쌤 코드
+    let btnOp = document.getElementById("btnOp");
+    let in1 = document.getElmentById("in1");
+    let in2 = document.getElementById("in2");
+    btnOp.addEventListener("click",function(){
+            re1.value = parseInt(in1.value) + parseInt(in2.value);
+        }
+            */
+}
+
+
+</script>
+<h1> 1. +연산</h1>
+<input type="text" id="in1"> + <input type="text" id="in2"> = <input type="text" id="re1"> 
+<input type="button" value="연산" onclick="calc()" id="btnOp">
+
+
+<!--4-2번-->
+
+
+
+
+<h1>2. 총합 구하기</h1>
+가격<input type="text" id="price1" > X 수량
+<select id="sel1">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+</select>
+총합 : <p id="sum1">0</p>
+
+<script>
+    let price1 = document.getElementById("price1"); //가격 가져오기
+    let sel1 = document.getElementById("sel1"); //수량 가져오기
+    let sum1 = document.getElementById("sum1") //총합 가겨오기
+    sel1.addEventListener("change",function(){
+        // 수량이 변경될 때마다 (change)
+        sum1.innerHTML = price1.value * sel1.value; //가격*수량
+    })
+    
+</script>
+
+<!--4-3번-->
+
+
+<h1>3. 총합구하기2 (선택된 값만)</h1>
+
+    바나나(1000원)<input type="checkbox" name="fruite" value="1000">
+    사과(500원)<input type="checkbox" name="fruite" value="500">
+    배(1500원)<input type="checkbox" name="fruite" value="1500">
+
+<input type="button" value="총합 구하기" id="btntotal"><br>
+선택한 총가격: <p id="sum3">0</p>
+
+<script>
+    let btntotal = document.getElementById("btntotal");
+    let fruite = document.getElementsByName("fruite");
+    let sum3 = document.getElementById("sum3");
+    btntotal.addEventListener("click",function(){ 
+        //총합 구하기 버튼을 클릭하면
+        let sum = 0
+        for(i=0; i<fruite.length; i++){
+            // 사용자가 체크한것만
+            if(fruite[i].checked){
+                sum += parseInt(fruite[i].value);
+                
+            }
+        }
+        sum3.innerHTML = sum;
+
+    })
+    
+</script>
+
+
+<br>
+<hr>
+<br>
+
+
+
+<!--5번-->
+
+
+<form action="logServer" method="post" onsubmit="return loginValidate()">
+아이디 <input type="text" id="id"> <label id="idmsg"></label><br>
+비밀번호 <input type="password" id="pw"> <label id="pwmsg"></label><br>
+<input type="submit" value="로그인">
+</form>
+
+<script>
+    function loginValidate(){
+        let id = document.getElementById("id");
+        let pw = document.getElementById("pw");
+        let idmsg = document.getElementById("idmsg");
+        let pwmsg = document.getElementById("pwmsg");
+        let idresult;
+        let pwresult;
+
+
+        if(id.value.length>0){
+            idmsg.innerHTML = ""
+            idresult = true;
+            
+        }else{
+            idmsg.innerHTML = "id를 입력하세요"
+            idresult = false;
+        }
+
+        if(pw.value.length>0){
+            pwmsg.innerHTML = ""
+            pwresult = true;
+            
+        }else{
+            pwmsg.innerHTML = "비밀번호를 입력하세요"
+            pwresult = false;
+        }
+        if(idresult == true && pwresult == true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+</script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          
+        p {
+            display: inline-block;
+        }
+        .container{
+            width: 960px;
+            
+            
+        }
+
+        img{
+            width: 300px;
+        }
+
+        #div2{
+            border: solid 1px gray;
+            width: 250px;
+            height: 200px;
+        }
+
+        #div2content{
+            margin:0px;
+            padding: 10px;
+            
+        }
+
+        #for{
+            
+            margin: 0px;
+            padding: 10px;
+            
+        }
+
+        .box1{
+            width:400px;
+            float: left;
+            padding: 20px;
+            margin-left: 50px;
+            
+        }
+        
+        .box2{
+            width: 400px;
+            float: right;
+            border: 1px solid gray;
+            padding: 50px;
+            padding-right: 0px;
+            
+        }
+
+        
+
+        .down{
+            border:1px solid black;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+        }
+
+        select{
+            width: 250px;
+            height: 30px;
+        
+        }
+
+        #get{
+            width: 30px;
+        }
+
+        #strong2{
+            padding-left: 100px;
+        }
+        .btn1{
+            width: 150px;
+            height: 50px;
+            background-color: lightblue;
+        }
+        .btn2{
+            width: 100px;
+            height: 50px;
+            background-color: lightblue;
+            
+        }
+
+        .won1{
+            padding-left: 160px;
+            font-weight: bold;
+        }
+
+        #won2{
+            padding-left: 100px;
+            font-weight: bold;
+        }
+
+        
+        
+        
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">
+            <img src="../image/bono.gif">
+        </div>
+
+        <div class="box2"> 
+            <strong>알피니스 이지 밴딩 클라이밍 팬츠 블랙</strong><br>
+            <p> 25% </p> <p class="won1">61,500원</p>
+
+            <div id="div2">
+                <p id="for">고객을 위한 혜택</p>
+                <hr>
+
+                <p id="div2content">어쩌고 저쩌고 어쩌고 저쩌고<br>
+                저쩌고 어쩌고 저쩌고 어쩌고
+            </div><br>
+
+
+            <div>
+                <select id="sel">
+                    <option value="size">사이즈</option>
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select><br>
+
+                <script>
+                    let sel = document.getElementById("sel"); //사이즈 가져오기
+                    //select 선택하면 사이즈 나오게
+                    sel.addEventListener("change",function(){
+                        let selected, s;
+                        selected = sel.selectedIndex;
+                        s = sel.options[selected].value;
+                        document.getElementById("result").innerHTML = s;
+                    })
+                </script>
+                    <p id="result"></p><br>
+                <!--사이즈랑 수량선택-->
+                <button onclick="updown('down')">-</button><input type="text" id="get" value="1">
+                <button onclick="updown('up')">+</button> <strong id="strong2">61,500원</strong><br>
+                                    
+                
+
+
+                <hr>
+                <p>총 상품 금액</p> <p id="won2">61,500원</p>
+                <div id="container2">
+                <button class="btn1">선물하기</button><button class="btn1">구매하기</button><br>
+                <button class="btn2">톡톡문의</button><button class="btn2">찜하기</button><button class="btn2">장바구니</button>
+                </div>
+            </div>
+            <script>
+                    // 갯수 선택
+                    let get = document.getElementById("get")
+                    function updown(x){
+                    if(x =="up"){
+                        get.value ++;
+                 
+                    }else{
+                        if(get.value != "1"){
+                            get.value --;
+                        }
+
+                    }
+                    document.getElementById("get").innerHTML = get
+                    document.getElementById("won2").innerHTML = get.value * 61500 + "원"
+                    
+                    
+                    
+            
+                }
+                </script>
+
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>

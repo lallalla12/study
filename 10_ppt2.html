@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border: solid gray 1px;
+            padding: 30px;
+        }
+        .txt {
+            width: 50px;
+            margin: 50px;
+        }
+
+        p {
+            display: inline-block;
+        }
+       
+    </style>
+</head>
+<body>
+    <h1>장바구니</h1>
+    장바구니에 등록하신 상품의 목록입니다.
+    <table>
+        <tr id="tr1">
+            
+            <td> <input type="checkbox" value="one"></td>
+            <td> 이미지 </td>
+            <td> 상품명 </td>
+            <td> 판매금액 </td>
+            <td> 수량 </td>
+            <td> 주문금액 </td>
+        </tr>
+        
+        <tr>
+            <td> <input type="checkbox" value="one"></td>
+            <td> <img src="../image/bono.gif" width="100px" height="100px"> </td>
+            <td> 보노보노 (8,000바트) </td>
+            <td> <p id="won1">11,200바트</p> </td>
+            <td> <input type="text" value="1" class="txt" id="in1"> </td>
+            <td> <p id="val1">11200</p> 바트</td>
+        </tr>
+
+        <script>
+            let won1 = 11200 //가격 가져오기
+            let in1 = document.getElementById("in1") //수량 가져오기
+            let val1 = document.getElementById("val1") // 주문금액 불러오기
+            in1.addEventListener("change",function(){
+                val1.innerHTML = in1.value * won1 
+                document.getElementById("total").innerHTML = parseInt(val1.innerHTML) + parseInt(val2.innerHTML) + parseInt(val3.innerHTML) + parseInt(val4.innerHTML)
+            })
+            
+        </script>
+
+        <tr>
+            <td> <input type="checkbox" value="two"></td>
+            <td> <img src="../image/poro.gif" width="100px" height="100px"> </td>
+            <td> 포로리</td>
+            <td> <p id="won2">4,000바트</p> </td>
+            <td> <input type="text" value="1" class="txt" id="in2"> </td>
+            <td> <p id="val2">8000</p>바트 </td>
+        </tr>
+
+        <script>
+            let won2 = 4000 //가격 가져오기
+            let in2 = document.getElementById("in2") //수량 가져오기
+            let val2 = document.getElementById("val2") // 주문금액 불러오기
+            in2.addEventListener("change",function(){
+                val2.innerHTML = in2.value * won2 
+                document.getElementById("total").innerHTML = parseInt(val1.innerHTML) + parseInt(val2.innerHTML) + parseInt(val3.innerHTML) + parseInt(val4.innerHTML)
+            })
+            
+        </script>
+        <tr>
+            <td> <input type="checkbox" value="one"></td>
+            <td> <img src="../image/buri.gif" width="100px" height="100px"> </td>
+            <td> 너부리 (2,000바트) </td>
+            <td> <p id="won3">2,000바트</p> </td>
+            <td> <input type="text" value="1" class="txt" id="in3"> </td>
+            <td> <p id="val3">4000</p>바트</td>
+        </tr>
+
+        <script>
+            let won3 = 2000 //가격 가져오기
+            let in3 = document.getElementById("in3") //수량 가져오기
+            let val3 = document.getElementById("val3") // 주문금액 불러오기
+            in3.addEventListener("change",function(){
+                val3.innerHTML = in3.value * won3
+                document.getElementById("total").innerHTML = parseInt(val1.innerHTML) + parseInt(val2.innerHTML) + parseInt(val3.innerHTML) + parseInt(val4.innerHTML)
+            })
+            
+        </script>
+
+        <tr>
+            <td> <input type="checkbox" value="one"></td>
+            <td> <img src="../image/bobo.gif" width="100px" height="100px"> </td>
+            <td> 움직보노보노(2,000바트) </td>
+            <td> <p id="won4">7,000바트</p> </td>
+            <td> <input type="text" value="1" class="txt" id="in4"> </td>
+            <td> <p id="val4">7000</p>바트</td>
+        </tr>
+
+        <script>
+            let won4 = 7000 //가격 가져오기
+            let in4 = document.getElementById("in4") //수량 가져오기
+            let val4 = document.getElementById("val4") // 주문금액 불러오기
+            in4.addEventListener("change",function(){
+                val4.innerHTML = in4.value * won4
+                document.getElementById("total").innerHTML = parseInt(val1.innerHTML) + parseInt(val2.innerHTML) + parseInt(val3.innerHTML) + parseInt(val4.innerHTML)
+            })
+            
+        </script>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td> </td>
+            <td></td>
+            <td> 총 주문금액 <p id="total"></p> 바트</td>
+        </tr>
+        <script>
+            console.log(parseInt(val1.innerHTML))
+           
+        </script>
+    </table>
+    <input type="button" value="선택삭제"><input type="button" value="전부삭제">
+    <input type="button" value="주문하기"><input type="button" value="계속쇼핑하기">
+
+    <script>
+        document.getElementById("total").innerHTML = parseInt(val1.innerHTML) + parseInt(val2.innerHTML) + parseInt(val3.innerHTML) + parseInt(val4.innerHTML)
+    </script>
+</body>
+</html>
