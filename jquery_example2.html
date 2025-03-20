@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+        //1번 jquery
+        $(document).ready(function(){
+            $("tr:even").css("background-color", "orange");
+        //2번 jquery    
+            $("tr:first").css({"background-color" : "black", "color" : "white"})
+        })
+        
+        //3번 jquery
+        $(document).ready(function(){
+            var array1 = ["고구마","감자","배추","고추"];
+            $.each(array1, function(index, element){
+                $("#result").h1($(element).text())
+	          
+            })
+        
+        })
+    </script>
+
+
+</head>
+
+<body>
+    <!--1번-->
+    <table>
+        <tr>
+            <td>이름</td>
+            <td>주소</td>
+        </tr>
+        <tr>
+            <td>홍길동</td
+            ><td>서울시</td>
+        </tr>
+        <tr>
+            <td>이순신</td>
+            <td>제주도</td>
+        </tr>
+        <tr>
+            <td>왕건</td>
+            <td>경기도</td>
+        </tr>
+    </table>
+
+<hr>
+
+<!--3번-->
+
+<h1 id="result"></h1>
+
+
+
+
+</body>
+</html>
