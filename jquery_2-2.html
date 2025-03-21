@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+        // 5번 jquery
+        // id 중복 방지
+        let clonedno = 0; 
+        $(document).ready(function(){
+            // 복제하기 버튼을 클릭하면,
+            $("#clone-btn").on("click",function(){
+                // id 중복 방지하기위해 clonedno 1증가
+                let clonetxt = "cloned" + ++clonedno;
+                // 요소 복제
+                let cloneElement = $("#original").clone()
+                // ID 변경(중복 방지)
+                cloneElement.attr("id",clonetxt);
+                // 복제한 요소를 body태그에 추가
+                cloneElement.appendTo("body")
+            })
+            
+        })
+    </script>
+    <!--5번 -->
+    <div id="original">
+        <p>이것은 원본 요소 입니다.</p>
+    </div>
+    <input type="button" value="복제하기" id="clone-btn">
+
+<hr>
+</body>
+</html>

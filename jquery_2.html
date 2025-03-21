@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+        .highlight{
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //1번 jquery
+        $(document).ready(function(){
+            //button을 click하면
+            $("input:button").on("click",function(){
+            //p태그에 클래스 추가(addclass)
+            $("p").addClass(function(index,x){
+                // 현재 클래스(x)가 hightlight 이면 "bold-text" 클래스를 추가하고,
+                // 그렇지 않으면, "hightlight" 클래스를 추가
+                return x == "highlight" ? "bold-text" : "highlight"
+            })
+            })
+            
+        })
+    </script>
+    <!--1번-->
+    <p>이 문장에 클래스를 추가합니다.</p>
+    <input type="button" value="클래스 추가">
+
+<hr>
+    <script>
+    //2번 jquery
+    $(document).ready(function(){
+        $("input:button").on("click",function(){
+            // img의 src속성(attr)을 console에 출력
+            console.log($("img").attr("src"))
+            //img의 src를 "../image/bono.gif"로 변경 {속성에 대한 값이 하나일 때}
+            //$("img").attr("src","../image/bono.gif")
+            //img의 src의 값을 변경하고 넓이(width), 높이(height)도 변경 {속성의 대한 값이 여러개일 때}
+            $("img").attr({"src":"../image/bono.gif", "width": "400px", "height":"400px"})
+            //img의 alt의 존재를 확인하고 alt가 있으면 "(updated)가 추가되고
+            // 없으면 alt애 "그림입니다"가 추가됨
+            $("img").attr("alt",function(index, currentValue){
+                return currentValue ? currentValue + "(updated)" : "그림입니다"
+            })
+        })
+    })
+
+    </script>
+
+    <!--2번-->
+    <img src="../image/bobo.gif" >
+    <input type="button" value="이미지 변경">
+
+<hr>
+
+    
+    <!--3번-->
+    <p id="html"></p>
+    <p id="content"></p>
+
+    <script>
+        //3번 javascript
+        document.getElementById("html").innerHTML = "<h1>안녕하세요.</h1>" 
+        document.getElementById("content").textContent = "<h1>안녕하세요.</h1>" 
+    </script>   
+
+
+
+    <script>
+        //3번 jquery
+        $(document).ready(function(){
+            //select가 바뀔때
+            $("select").on("change",function(){
+                //option이 선택될때 value값이 "basic"이면
+                if($("option:selected").val() === "basic"){
+                     // 참이면 text에 입력된 것이 "text"로 "#result"에 출력
+                    $("#result").text($("input:text").val())
+                }else{
+                    // 거짓이면 text에 입력된 것이 "html"로 "#result"에 출력
+                    $("#result").html($("input:text").val())
+                }
+                
+            })
+        })
+    </script>
+
+    <input type="text">
+    <select>
+        <option value="">--------</option>
+        <option value="basic">기본모드</option>
+        <option value="html">html모드</option>
+    </select>
+
+    <div id="result"></div>
+<hr>
+
+    
+
+
+
+ 
+</body>
+</html>

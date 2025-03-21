@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+        //4번 jquery로 하기
+        $(document).ready(function(){
+            // 부모태그(body) 제일 마지막으로로 들어가라
+            $("body").append($("<h5>Good Day1</h5>"))
+            // 부모태그(p) 제일 마지막으로 들어가라
+            $("p").append($("<h5>Good Day2</h5>"))
+            // 부모태그(id값이 a) 제일 마지막으로 들어가
+            $("#a").append($("<h5>Good day3</h5>"))
+            //부모 (id가 "a")에 자식(id가 "b") 마지막으로 들어가라
+            $("#b").appendTo($("#a"))
+
+            //부모 (id가 "c")에 제일 처음으로 들어가라
+            $("#c").prepend($("<h5>Good day4</h5>"))
+            //부모 (id가 "a")에 자식(id가 "d") 처음으로 들어가라
+            $("#d").prependTo($("#a"))
+
+            //"<div>새로운 div요소</div>"를 #b 뒤에 추가
+            $("#b").after("<div>새로운 div1요소</div>")
+            //"<div>새로운 div2요소</div>"를 #b 뒤에 추가
+            $("<div>새로운 div2요소</div>").insertAfter("#b")
+
+        })
+    </script>
+<p></p>
+<p id="a"></p>
+<p id="b"></p>
+<p id="c"></p>
+<p id="d"></p>
+
+
+
+
+</body>
+</html>
