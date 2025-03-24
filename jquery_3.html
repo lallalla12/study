@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+        /*1번 css*/
+        .reverse{
+            background-color: black;
+            color: white;
+        }
+        h3, a{
+            margin: 5px;
+            padding: 5px;
+            border: 3px solid black;
+        }
+    </style>
+    <script>
+        // 1번 jquery
+        $(document).ready(function(){
+            $("h1").on("click", function(){
+                $(this).html(function(index, html){
+                    return html+"+"
+                })
+
+            })
+            //on()을 이용한 이벤트 연결
+            /*$("h1").on({
+                // 마우스 올렸을 때
+                "mouseenter" : function(){
+                // 내가 선택한 h1(this)에 class ="reverse"를 추가
+                $(this).addClass("reverse");
+                },
+                // 마우스 벗어났을 때
+                "mouseleave" : function(){
+                // 내가 선택한 h1(this)에 class = "reverse"를 제거
+                $(this).removeClass("reverse");
+                }
+            
+            })*/
+
+
+           //이벤트 연결 메서드를 이용한 이벤트 연결
+           $("h1").hover(
+            // 마우스 올렸을 때
+            function(){$(this).addClass("reverse");},
+            // 마우스 벗어났을 때
+            function(){$(this).removeClass("reverse");}
+           )
+        })
+    </script>
+</head>
+<body>
+    <!--1번-->
+    <h1 id="header0"> Header-0</h1>
+    <h1 id="header1"> Header-1</h1>
+    <h1 id="header3"> Header-2</h1>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+
+<hr>
+
+    <script>
+        // 2번 jquery
+         $(document).ready(function(){
+        //부모 태그의 대한 선택자    자식 태그에 대한 선택자
+            $("#warp").on("click","h2",function(){
+                let length = $("h2").length;
+                let targetHTML = $(this).html();
+
+                $("#warp").append("<h2>" + length + "-" + targetHTML + "</h2>")
+            })
+         })
+    </script>
+
+    <!--2번-->
+    <div id="warp">
+        <h2>Header-0</h2>
+    </div>
+<hr>
+    <script>
+        // 3번 jquery
+         $(document).ready(function(){
+            $("a").click(function(){
+                $(this).css("background-color","blue");
+                // a태그가 가지고 있는 기본 이벤트(click)를 제거
+                event.preventDefault();
+                event.stopPropagation();
+
+            })
+            $("h3").click(function(){
+                $(this).css("background-color","red");
+            })
+         })
+    </script>
+
+    <!--3번-->
+    <h3>
+        <a href="http://www.naver.com">네이버</a>
+    </h3>
+<hr>
+    <script>
+        // 4번 jquery
+        $(document).ready(function(){
+        $("textarea").keyup(function(){
+            let textLength = $(this).val().length; 
+            // 총 남은 글자 수
+            let remain = 150 - textLength; 
+
+            // p태그에 현재 남아 있는 글자수를 출력
+            $("span").html(remain);
+        })
+        })
+    </script>
+
+    <!--4번-->
+    <h4>이력서</h4>
+    <span></span>
+    <textarea cols="70" rows="5"></textarea>
+<hr>
+<script>
+    // 5번 jquery
+    $(document).ready(function(){
+        // 웹 브라우저에 스크롤이 발생할 때 마다,
+        $(window).scroll(function(){
+            //스크롤 높이
+            let scrollHeight = $(window).scrollTop() + $(window).height()
+            let documentHeight = $(document).height();
+            if(scrollHeight==documentHeight){
+            for(let i = 0; i<10; i++){
+                $("body").append("<p>무한 스크롤</p>")
+            }
+        }
+        })
+        
+    })
+</script>
+
+    <!--5번-->
+    <div>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+        <h5>무한 스크롤</h5>
+
+
+
+    </div>
+</body>
+</html> 

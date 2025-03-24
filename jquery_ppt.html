@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+        // 1번 jquery
+        $(document).ready(function(){
+            $("get").text($("get").val())
+            
+            $("#up").on("click",function(){
+                get.value ++;
+                
+            })
+            $("#down").on("click",function(){
+                if(get.value != "1"){
+                    get.value --;
+                }
+            })
+        })
+    </script>
+    갯수 
+    <!--1번-->
+    <input type="text" id="get"><input type="button" id="up" value="+">
+    <input type="button" id="down" value="-">
+<br>
+<hr>
+<br>
+
+    <script>
+        // 2번 jquery
+        $(document).ready(function(){
+            $("input:button").on("click",function(){
+            $("input:checkbox[name='play']").each(function(){
+                if($(this).is(":checked")==true){
+                    $("#resultvalue").html($(this).val())
+                }
+            })
+        })
+    })
+    </script>
+
+<!--2번-->
+<ul>
+    <li><input type="checkbox" name="play" value="야구">야구</li>
+    <li><input type="checkbox" name="play" value="농구">농구</li>
+    <li><input type="checkbox" name="play" value="게임">게임</li>
+</ul>
+<input type="button" value="결과보기" id="getval"><br>
+결과값:<br>
+<h1 id="resultvalue"></h1> 
+
+<br>
+<hr>
+<br>
+
+
+<script>
+    // 3번
+    $(document).ready(function(){
+        $("textarea").keyup(function(){
+            let textLength = $(this).val().length;
+            $("#num").html(textLength)
+        })
+    })
+</script>
+
+
+
+<!--3번-->
+글자수 세기<br>
+<textarea rows="20px" id="cnt"></textarea><br>
+입력문자수 : <p id="num"></p>
+
+<br>
+<hr>
+<br>
+
+<script>
+    // 4-1번
+    $(document).ready(function(){
+        $("#btnOp").on("click",function(){
+            console.log(parseInt($("#in1").val()) + parseInt($("#in2").val()))
+            $("#re1").text($parseInt($("#in1").val()) + parseInt($("#in2").val()))
+        })
+        
+    })
+
+</script>
+
+<!--4-1번-->
+<h1> 1. +연산</h1>
+<input type="text" id="in1"> + <input type="text" id="in2"> = <input type="text" id="re1"> 
+<input type="button" value="연산" id="btnOp">
+
+<hr>
+
+<script>
+    $(document).ready(function(){
+        $("select").on("change",function(){
+            $("#sum1").html($("#price1").val() * $("sel1").val())
+        })
+    })
+</script>
+
+<!--4-2번-->
+<h1>2. 총합 구하기</h1>
+가격<input type="text" id="price1" > X 수량
+<select id="sel1">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+</select>
+총합 : <p id="sum1">0</p>
+
+<!--4-3번-->
+<h1>3. 총합구하기2 (선택된 값만)</h1>
+
+    바나나(1000원)<input type="checkbox" name="fruite" value="1000">
+    사과(500원)<input type="checkbox" name="fruite" value="500">
+    배(1500원)<input type="checkbox" name="fruite" value="1500">
+
+<input type="button" value="총합 구하기" id="btntotal"><br>
+선택한 총가격: <p id="sum3">0</p>
+
+
+<br>
+<hr>
+<br>
+
+<!--5번-->
+<form action="logServer" method="post" onsubmit="return loginValidate()">
+    아이디 <input type="text" id="id"> <label id="idmsg"></label><br>
+    비밀번호 <input type="password" id="pw"> <label id="pwmsg"></label><br>
+    <input type="submit" value="로그인">
+    </form>
+</body>
+</html>

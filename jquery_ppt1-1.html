@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <script>
+        // 4-1번
+        $(document).ready(function(){
+            $("#btnOp").on("click",function(){
+                //let x = parseInt($("#in1").val())
+                //let y = parseInt($("#in2").val())
+                console.log(parseInt($("#in1").val()) + parseInt($("#in2").val()))
+                $("#re1").text($parseInt($("#in1").val()) + parseInt($("#in2").val()))
+            })
+            
+        })
+    
+    </script>
+    
+    <!--4-1번-->
+    <h1> 1. +연산</h1>
+    <input type="text" id="in1"> + <input type="text" id="in2"> = <input type="text" id="re1"> 
+    <input type="button" value="연산" id="btnOp">
+</body>
+</html>
