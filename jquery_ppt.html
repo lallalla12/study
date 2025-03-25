@@ -25,7 +25,7 @@
     </script>
     갯수 
     <!--1번-->
-    <input type="text" id="get"><input type="button" id="up" value="+">
+    <input type="text" id="get" value="1"><input type="button" id="up" value="+">
     <input type="button" id="down" value="-">
 <br>
 <hr>
@@ -34,17 +34,23 @@
     <script>
         // 2번 jquery
         $(document).ready(function(){
-            $("input:button").on("click",function(){
-            $("input:checkbox[name='play']").each(function(){
-                if($(this).is(":checked")==true){
-                    $("#resultvalue").html($(this).val())
+            $("#getval").on("click",function(){
+                let result = ""
+            $("input[name=play]").each(function(){
+                // 사용자가 체크한 것에 대해서
+                if($(this).is(":checked")){
+                    // 체크된거에 대한 결과 저장
+                    result += $(this).val()+"<br>";
+                    
                 }
             })
+           $("#resultvalue").html(result);
         })
     })
     </script>
 
 <!--2번-->
+취미
 <ul>
     <li><input type="checkbox" name="play" value="야구">야구</li>
     <li><input type="checkbox" name="play" value="농구">농구</li>
@@ -83,9 +89,15 @@
 <script>
     // 4-1번
     $(document).ready(function(){
+        // 첫번째 숫자
+        let in1 = $("#in1")
+        // 두번째 숫자
+        let in2 = $("#in2")
+        // 세번째 숫자
+        let re1 = $("#re1")
+        //연산 버튼을 클릭하면
         $("#btnOp").on("click",function(){
-            console.log(parseInt($("#in1").val()) + parseInt($("#in2").val()))
-            $("#re1").text($parseInt($("#in1").val()) + parseInt($("#in2").val()))
+            re1.val(parseInt(in1.val()) + parseInt(in2.val()))
         })
         
     })
@@ -100,12 +112,26 @@
 <hr>
 
 <script>
-    $(document).ready(function(){
-        $("select").on("change",function(){
-            $("#sum1").html($("#price1").val() * $("sel1").val())
+    /*$(document).ready(function(){
+        // 가격
+        let price1=$("#price1")
+        // 수량
+        let sel1 = $("#sel1")
+        // 총합
+        let sum1 = price1*sel1
+
+        sum1Func()
+        $("#sel1").on("change",function(){
+            sum1Func()
         })
-    })
+        function sum1Func(){
+            sum1.html("총합" + price1.val()*sel1.val())
+        }
+    })*/
 </script>
+
+
+
 
 <!--4-2번-->
 <h1>2. 총합 구하기</h1>
@@ -118,6 +144,21 @@
     <option value="5">5</option>
 </select>
 총합 : <p id="sum1">0</p>
+
+
+<script>
+    $(document).ready(function(){
+        $("#btntotal").on("click",function(){
+            let sum = 0
+            $("input[name=fruite]").each(function(){
+                if($(this).is(":checked")){
+                    sum+=parseInt($(this).val())
+                }
+            })
+            $("#sum3").html( sum)
+        })
+    })
+</script>
 
 <!--4-3번-->
 <h1>3. 총합구하기2 (선택된 값만)</h1>
@@ -134,8 +175,50 @@
 <hr>
 <br>
 
+<script>
+    $(document).ready(function(){
+        let id = $("#id")
+        let pw = $("#pw")
+        let idresult;
+        let pwresult;
+        
+        // form태그에 아이디와 비밀번호를 제출하면,
+        $("form").submit(function(){
+            // 아이디를 입력하지 않았으면,
+        if(id.val().length == 0){
+            //"아이디를 입력하시오" 메시지 출력
+            $("#idmsg").html("아이디를 입력하시오")
+            idresult = false;
+        }else{
+            //"아이디 입력 완료" 메시지 출력
+            $("#idmsg").html("아이디를 입력 완료")
+            idresult = true;
+        }
+
+        // 비밀번호를 입력하지 않았으면,
+        if(pw.val().length == 0){
+            //"비밀번호를 입력하시오" 메시지 출력
+            $("#pwmsg").html("비밀번호를 입력하시오")
+            pwresult = false;
+        }else{
+            //"비밀번호 입력 완료" 메시지 출력
+            $("#pwmsg").html("비밀번호 입력 완료")
+            pwresult = true;
+        }
+        if(idresult == true && pwresult == true){
+            return true;
+        }else{
+            return false;
+        }
+
+        })
+
+        
+    })
+</script>
+
 <!--5번-->
-<form action="logServer" method="post" onsubmit="return loginValidate()">
+<form action="a" method="post">
     아이디 <input type="text" id="id"> <label id="idmsg"></label><br>
     비밀번호 <input type="password" id="pw"> <label id="pwmsg"></label><br>
     <input type="submit" value="로그인">

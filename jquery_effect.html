@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            // show 버튼 클릭하면,
+            $("#showbtn").on("click",function(){
+                // div 내용 보여주기
+                $("#effect").show(5000, "linear",function(){
+                    // callback
+                    alert("show효과 끝난 후 alert로 콜백")
+                })
+            })
+            
+
+            // hide 버튼을 클릭하면,
+            $("#hidebtn").on("click",function(){
+                // div 내용 숨기기
+                $("#effect").hide(3000, "swing");
+            })
+            
+            // toggle버튼을 클릭하면
+            $("#togglebtn").on("click",function(){
+                // div 내용 보였다가 숨기기
+                $("#effect").toggle(5000, "linear");
+            })
+
+            
+            
+        })
+    </script>
+
+
+
+</head>
+<body>
+    <input type="button" value="show" id="showbtn">
+    <input type="button" value="hide" id="hidebtn">
+    <input type="button" value="toggole" id="togglebtn">
+    <div id="effect">
+        <h1>안녕하세요.</h1>
+        <p>저는 홍길동 입니다.</p>
+    </div>
+
+    
+</body>
+</html>

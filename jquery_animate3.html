@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <style>
+        div{
+            width: 150px;
+            height: 150px;
+            background-color: skyblue;
+            margin-bottom: 20px;
+            position: relative;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#btnRed").on("click",function(){
+                $("div").animate({
+                    backgroundColor:"red",
+                    width:200,
+                    height:200,
+                    left:50
+                },1000)
+            })
+            $("#btnGreen").on("click",function(){
+                $("div").animate({
+                    backgroundColor:"green",
+                    width:150,
+                    height:150,
+                    left:0
+
+                },1000)
+            })
+            $("#btnBlue").on("click",function(){
+                $("div").animate({
+                    backgroundColor:"blue",
+                    width:150,
+                    height:150,
+                    left:0
+                },1000)
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <div></div>
+    <input type="button" id="btnRed" value="빨간색으로">
+    <input type="button" id="btnGreen" value="초록색으로">
+    <input type="button" id="btnBlue" value="파란색으로">
+</body>
+</html>

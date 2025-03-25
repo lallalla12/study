@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <style>
+        .reverse{
+            color: white;
+            background-color: black;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("div").hover(function(){
+                $(this).addClass("reverse",1000)
+            },function(){
+                $(this).removeClass("reverse",1000)
+            })
+
+
+        })
+    </script>
+</head>
+<body>
+
+    <div>
+        <h1>안녕하세요.</h1>
+        <p>저는 홍길동 입니다.</p>
+    </div>
+
+
+    
+</body>
+</html>

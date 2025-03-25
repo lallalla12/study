@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <style>
+        /*1번*/
+        #box1{
+            width: 150px;
+            height: 150px;
+            background-color: palevioletred;
+            position: relative;
+        }
+    </style>
+    <script>
+        /*1번*/
+        $(document).ready(function(){
+            $("#movebtn").on("click",function(){
+                if($("#box1").css("left")==0){
+                    $("#box1").animate({
+                    left:500
+                })
+
+                }else{
+                    $("#box1").animate({
+                    left:0
+
+                })
+                }
+            
+                
+                
+            })
+
+
+            /*2번*/
+            $("#btn2").on("click", function(){
+                $("#hello").hide(2000)
+                $("#hello").show(2000)
+
+            })
+
+            /*3번*/
+            $("#btn3").on("click",function(){
+               $(this).animate({
+                width:100,
+                height:100
+                    
+                },function(){
+                    $(this).animate({
+                        width:50,
+                        height:20
+                    })
+                })
+                
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <!--1번-->
+    <div id="box1">
+    </div>
+    <input type="button" value="move" id="movebtn">
+<hr>
+    <!--2번-->
+    <h1 id="hello">Hello!</h1>
+    <input type="button" value="button" id="btn2">
+<hr>
+    <!--3번-->
+    <input type="button" value="button" id="btn3">
+
+<hr>
+    <!--4번-->
+    날짜 선택 : <input type="date">
+</body>
+</html>
