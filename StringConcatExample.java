@@ -1,25 +1,18 @@
-package sec03.exam01;
+package Chaptor03;
 
 public class StringConcatExample {
 
 	public static void main(String[] args) {
-		// 숫자 연산
-		int value = 10 + 2 + 8;
-		System.out.println("value: " + value);
+		String str1 = "JDK" + 6.0;		// 문자열 "JDK 6.0"으로 저장
+		String str2 = str1 + " 특징";		// 문자열로 결합됨
+		System.out.println(str2);
 		
-		//문자열 결합 연산
-		String str1 = 10 + 2 + "8"; // 숫자 10과 2를 먼저 계산한 후 문자열 "8"을 결합
-		System.out.println("str1: " + str1);
+		String str3 = "JDK" + 3 +3.0;	// 문자열 "JDK3" 결합 후 "3.0"결합됨
+		String str4 = 3 + 3.0 + "JDK";	// 숫자 3과 3.0 먼저 계산후 "JDK"와 결합
+		System.out.println(str3);
+		System.out.println(str4);
 		
-		String str2 = 10 + "2" + 8; // 숫자 10과 문자열 "2"를 먼저 결합후 숫자 8 결합
-		System.out.println("str2: " + str2);
-		
-		String str3 = "10" + 2 + 8; // 문자열 "10"과 숫자 2를 먼저 결합후 숫자 8 결합
-		System.out.println("str3: " + str3);
-		
-		String str4 = "10" + (2 + 8); // 괄호 안 숫자 2와 8 먼저 계산 후 문자열 10 결합
-		System.out.println("str4: " + str4);
-		
+
 	}
 
 }
