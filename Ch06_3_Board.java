@@ -1,4 +1,4 @@
-package programming;
+package programming.Ch06;
 
 public class Ch06_3_Board {
 	
