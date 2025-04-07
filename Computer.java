@@ -1,20 +1,13 @@
-package Chapter06;
+package Chapter07;
 
-public class Computer {
-	int sum1(int[] values) {
-		int sum = 0;
-		for(int i=0; i<values.length; i++) {
-			sum += values[i];
-		}
-		return sum;
+public class Computer extends Calculator{
+	// 재정의
+	// 생략 가능해도 괜찮음 , areaCircle() 메소드가 정확히 재정의된 것인지 컴파일러가 확인하기 때문에 실수를 줄여줌
+	@Override
+	double areaCircle(double r) {
+		System.out.println("Computer 객체의 areaCircle() 실행");
+		// 좀 더 정밀한 계산을 위해 Math.PI 상수 사용
+		return Math.PI * r * r;
 	}
 	
-	// 배열을 생성하지 않고 값을 목록만 넘겨주는 방법
-	int sum2(int ... values) {
-		int sum = 0;
-		for(int i=0; i<values.length; i++) {
-			sum += values[i];
-		}
-		return sum;
-	}
 }

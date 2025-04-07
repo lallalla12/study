@@ -1,7 +1,10 @@
-package Chapter06;
+package Chapter07;
 
-public class Student {
-		// 필드 (객체 안의 변수)
-		// 생성자
-		// 메소드(객체 안의 함수)
+public class Student extends People {
+	public int studentNo;
+	
+	public Student(String name, String ssn, int studentNo) {
+		super(name, ssn);
+		this.studentNo = studentNo;
+	}
 }

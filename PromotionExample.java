@@ -1,29 +1,32 @@
-package sec03.exam01;
+package programming.Ch07;
+
+class A{}
+
+class B extends A{}
+class C extends A{}
+
+class D extends B {}
+class E extends C {}
 
 public class PromotionExample {
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		byte byteValue = 10;
-		int intValue = byteValue;
-		System.out.println("intValue: " + intValue);
-		
-		char charValue ='가';
-		intValue = charValue;
-		System.out.println("가의 유니코드: " + intValue);
-		
-		intValue = 50;
-		long longValue = intValue;
-		System.out.println("longValue: " + longValue);
-		
-		longValue = 100;
-		float floatValue = longValue;
-		System.out.println("floatValue: " + floatValue);
-		
-		floatValue = 100.5F;
-		double doubleValue = floatValue;
-		System.out.println("doubleValue: " + doubleValue);
+		 B b = new B();
+		 C c = new C();
+		 D d = new D();
+		 E e = new E();
+		 
+		 A a1 = b;
+		 A a2 = c;
+		 A a3 = d;
+		 A a4 = e;
+		 
+		 B b1 = d;
+		 C c1 = e;
+		 
+		 // 상속 관계에 있지 않기 때문에 컴파일 에러 발생
+		 //B b3 = e;
+		 //C c2 = d;
+		 
 	}
-
+	
 }
