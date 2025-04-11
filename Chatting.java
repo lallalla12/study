@@ -2,8 +2,9 @@ package programming.Ch09;
 
 public class Chatting {
 	void startChat(String chatId) {
-		String nickName = null;
-		nickName = chatId;
+		//String nickName = null;
+		//nickName = chatId; -> 실행 x 
+		String nickName = chatId;
 		
 		class Chat {
 			public void start() {
