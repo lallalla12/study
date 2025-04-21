@@ -1,0 +1,105 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        'head'
+        'content'
+        'footer';
+    gap: 10px;
+}
+
+#head {
+    grid-area: head;
+    width: 1000px;
+    margin-left: 200px;
+    background-color: lightblue;
+    height: 100px;
+
+    display: flex; /* head부분 정렬을 위해 Flexbox 적용 */
+    justify-content: space-between; /*아이템들을 주 축(main axis, 보통 가로 방향)**에서 어떻게 정렬할지를 정해주는 속성*/
+    align-items: center;
+    padding: 0 50px;
+}
+
+#title h2 {
+    margin: 0;
+}
+
+#title a {
+    text-decoration: none;
+    color: black;
+}
+
+#li1 ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#li1 li a {
+    text-decoration: none;
+    color: black;
+}
+
+#btn1 {
+    display: flex;
+    gap: 10px;
+}
+
+#btn1 input {
+    width: 100px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: lightpink;
+}
+
+#content {
+    grid-area: content;
+    width: 1100px;
+    margin-left: 200px;
+}
+
+#content ul {
+    list-style: none;
+    padding: 0;
+}
+
+#content li {
+    border-bottom: solid 1px gray;
+    padding: 20px;
+}
+
+#content a {
+    color: black;
+    text-decoration: none;
+}
+
+#footer {
+    grid-area: footer;
+    background-color: lightgray;
+    padding: 20px;
+    text-align: center;
+    width: 1065px;
+    margin-left: 200px;
+}
+
+#footer select {
+    width: 100px;
+    padding: 5px;
+    margin: 10px;
+}
+
+#footer #txtsearch {
+    width: 300px;
+    padding: 5px;
+    margin: 10px;
+}
+
+#footer #searchbtn {
+    width: 100px;
+    padding: 5px;
+    margin: 10px;
+}
