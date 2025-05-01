@@ -13,9 +13,9 @@ BoardDAO dao = new BoardDAO(application);
 Map<String, Object> param = new HashMap<String, Object>();
 String searchField = request.getParameter("searchField");
 String searchWord = request.getParameter("searchWord");
-if (searchWord != null && !searchWord.trim().equals("")){
-    param.put("searchField", searchField);
-    param.put("searchWord", searchWord);
+if(searchWord != null){
+	param.put("searchField", searchField);
+	param.put("searchWord", searchWord);
 }
 
 // 게시물 수 확인
@@ -77,19 +77,24 @@ if (boardLists.isEmpty()){
 }
 else{
 	// 게시물이 있을 때
-	int virtualNum = 0;
+	int virtualNum = 0;	// 화면상에서의 게시물 번호
 	for (BoardDTO dto : boardLists)
 	{
-		virtualNum = totalCount--;
+		virtualNum = totalCount--;		// 전체 게시물 수에서 시작해 1씩 감소
 %>
 	<tr align="center">
+		<!--  게시물 번호 -->
 		<td><%= virtualNum %></td>
-		<td align = "left">
+		<!-- 제목(+하이퍼링크) -->
+		<td align = "left">			
 			<a href = "View.jsp?num=<%= dto.getNum() %>"> <%= dto.getTitle() %>
 </a>
 		</td>
-		<td align="center"><%= dto.getId() %></td>
+		<!-- 작성자 아이디 -->
+		<td align="center"><%= dto.getId() %></td>		
+		<!-- 조회수 -->
 		<td align="center"><%= dto.getVisitcount() %></td>
+		<!-- 작성일 -->
 		<td align="center"><%= dto.getPostdate() %></td>
 	</tr>
 	
