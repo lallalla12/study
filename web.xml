@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
+
+	<!-- 7-9 모든 페이지에 캐릭터 인코딩 설정하기 -->
+	<filter>
+		<filter-name>SetCharEncoding</filter-name>
+		<filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>SetCharEncoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+  <display-name>MustHaveJSP</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+  <context-param>
+  	<param-name>INIT_PARAM</param-name>
+  	<param-value>web.xml에 저장한 초기화 매개변수</param-value>
+  </context-param>
+  
+  
+  <context-param>
+  	<param-name>MySQLDriver</param-name>
+  	<param-value>com.mysql.jdbc.Driver</param-value>	<!-- 드라이버 이름 -->
+  </context-param>  
+  <context-param>
+  	<param-name>MySQLURL</param-name>
+  	<param-value>jdbc:mysql://localhost:3306/musthave?serverTimezone=Asia/Seoul</param-value>	<!-- 접속 URL -->
+  </context-param>
+  <context-param>
+  	<param-name>MySQLId</param-name>
+  	<param-value>root</param-value>	<!-- 계정 아이디 -->
+  </context-param>
+  <context-param>
+  	<param-name>MySQLpwd</param-name>
+  	<param-value>0000</param-value>	<!-- 패스워드 -->
+  </context-param>
+  
+  	<!-- 6-1 세션 유지 시간 설정 -->
+	<session-config>
+		<session-timeout>20</session-timeout>
+	</session-config>
+	
+	
+	<!-- 9-3 페이징 설정값 -->
+	<context-param>
+		<param-name>POSTS_PER_PAGE</param-name>
+		<param-value>10</param-value>
+	</context-param>
+	<context-param>
+		<param-name>PAGES_PER_BLOCK</param-name>
+		<param-value>5</param-value>
+	</context-param>
+	
+	<!-- 12-2 web.xml에 매칭 정보 추가 -->
+	<servlet>
+		<!-- 서블릿을 매핑하기 위한 서블릿명 작성 -->
+		<servlet-name>HelloServlet</servlet-name>
+		<!-- 해당 요청을 처리할 서블릿을 패키지를 포함하여 명시 -->
+		<servlet-class>servlet.HelloServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HelloServlet</servlet-name>
+		<!-- 컨택스트 루트를 제외한 요청명을 적음. 요청명은 보통 .do로 끝나는 형태를 사용하지만 다른형태도 가능 -->
+		<url-pattern>/JSP_CH12/HelloServlet.do</url-pattern>
+	</servlet-mapping>
+  	
+  	
+  	<!-- 12-7 요청명과 서블릿 매핑하기 -->
+  	<servlet>
+  		<servlet-name>DirectServletPrint</servlet-name>
+  		<servlet-class>servlet.DirectServletPrint</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>DirectServletPrint</servlet-name>
+  		<url-pattern>/JSP_CH12/DirectServletPrint.do</url-pattern>
+  	</servlet-mapping>
+  	
+  	<!-- 12-14 서블릿 매핑 -->
+  	<servlet>
+  		<servlet-name>MemberAuth</servlet-name>
+  		<servlet-class>servlet.MemberAuth</servlet-class>
+  		<init-param>
+  			<!-- 관리자 아이디가 nakja임을 전달 -->
+  			<param-name>admin_id</param-name>
+  			<param-value>nakja</param-value>
+  		</init-param>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>MemberAuth</servlet-name>
+  		<url-pattern>/JSP_CH12/MemberAuth.mvc</url-pattern>
+  	</servlet-mapping>
+  
+ <!--  <error-page>
+  	<error-code>404</error-code>					
+  	<location>/JSP_CH02/Exception.jsp</location>
+  </error-page>
+  <error-page>
+  	<error-code>405</error-code>
+  	<location>/JSP_CH02/Exception.jsp</location>
+  </error-page>
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/JSP_CH02/Exception.jsp</location>
+  </error-page>  --> 
+  
+</web-app>
