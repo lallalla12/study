@@ -48,8 +48,10 @@ public class MVCBoardDAO extends DBConnPool {
 
         try {
             psmt = con.prepareStatement(query);
-            psmt.setString(1, map.get("start").toString());
-            psmt.setString(2, map.get("end").toString());
+            // LIMIT은 정수 값만 받기 때문에 setint를 사용해야함,
+            psmt.setInt(1, Integer.parseInt(map.get("start").toString()));
+            psmt.setInt(2, Integer.parseInt(map.get("end").toString()));
+
             rs = psmt.executeQuery();
 
             while (rs.next()) {
@@ -130,14 +132,16 @@ public class MVCBoardDAO extends DBConnPool {
     }
 
     // 주어진 일련번호에 해당하는 게시물의 조회수를 1 증가시킵니다.
+    // updateVisitCount 메서드는 게시물의 일련번호를 인수로 받아 조회수를 증가 
     public void updateVisitCount(String idx) {
+    	// 조회수 1 증가시켜주는 쿼리문
         String query = "UPDATE mvcboard SET "
                      + " visitcount=visitcount+1 "
                      + " WHERE idx=?"; 
         try {
             psmt = con.prepareStatement(query);
             psmt.setString(1, idx);
-            psmt.executeQuery();
+            psmt.executeUpdate();
         }
         catch (Exception e) {
             System.out.println("게시물 조회수 증가 중 예외 발생");
@@ -167,6 +171,7 @@ public class MVCBoardDAO extends DBConnPool {
             psmt.setString(2, idx);
             rs = psmt.executeQuery();
             rs.next();
+            // 일치하는 게시물이 없다면 false 반환
             if (rs.getInt(1) == 0) {
                 isCorr = false;
             }
@@ -185,6 +190,7 @@ public class MVCBoardDAO extends DBConnPool {
             String query = "DELETE FROM mvcboard WHERE idx=?";
             psmt = con.prepareStatement(query);
             psmt.setString(1, idx);
+            // 정상적으로 삭제되었다면 executeUpdate메서드가 1반환
             result = psmt.executeUpdate();
         }
         catch (Exception e) {
