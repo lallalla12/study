@@ -16,7 +16,6 @@
 			value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
 		<property name="jdbcUrl"
 			value="jdbc:log4jdbc:mysql://localhost:3306/musthave?serverTimezone=UTC"></property>
-		
 		<property name="username" value="root"/>
 		<property name="password" value="0000"/>
 	</bean>
@@ -31,5 +30,4 @@
 	</bean>
 	
 	<mybatis-spring:scan base-package = "org.zerock.mapper"/>
-	<context:component-scan base-package="org.zerock.sample"/>
 </beans>
