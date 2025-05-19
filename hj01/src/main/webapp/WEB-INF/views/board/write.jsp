@@ -7,21 +7,28 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>상세 내용 보기</h1>
-	<table border="1">
+	<h1>글쓰기 화면으로 이동</h1>
+	<form action="/board/write" method="post">
+	<table>
 		<tr>
 			<td>제목</td>
-			<td>${board.title}</td>
+			<td>
+				<input type="text" name="title">
+			</td>
 		</tr>
 		<tr>
 			<td>내용</td>
-			<td>${board.content}</td>
+			<td>
+				<textarea name="content"></textarea>
+			</td>
 		</tr>
 		<tr>
 			<td colspan="2">
-			<a href="/board/modify?bno=${board.bno }">[수정]</a>
-			<a href="/board/remove?bno=${board.bno }">[삭제]</a></td>
+				<input type="submit" value="글쓰기">
+			</td>
 		</tr>
+		
 	</table>
+	</form>
 </body>
 </html>

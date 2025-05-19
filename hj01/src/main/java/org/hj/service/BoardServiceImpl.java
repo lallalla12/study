@@ -3,6 +3,7 @@ package org.hj.service;
 import java.util.List;
 
 import org.hj.domain.BoardVO;
+import org.hj.domain.Criteria;
 import org.hj.mapper.BoardMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,26 @@ public class BoardServiceImpl implements BoardService {
 	public BoardVO get(int bno) {
 		return mapper.read(bno);
 	}
+	@Override
+	public void modify(BoardVO board) {
+		mapper.update(board);
+	}
+	public void remove(int bno) {
+		mapper.delete(bno);
+	}
+	public void register(BoardVO board) {
+		mapper.insert(board);
+	}
+	@Override
+	public List<BoardVO> getlistWithPaging(Criteria cri) {
+		return mapper.getlistWithPaging(cri);
+	}
+	@Override
+	public int getTotalCount(Criteria cri) {
+		// TODO Auto-generated method stub
+		return mapper.getTotalCount(cri);
+	}
+	
+	
 	
 }
