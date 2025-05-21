@@ -24,4 +24,7 @@ public interface BoardMapper {
 	public void delete(int bno);
 	
 	public void insert(BoardVO board);
+	
+	// 목록 리스트에서 제목을 클릭하면 조회수를 1씩 증가
+	public void CountUpdate(int bno);
 }

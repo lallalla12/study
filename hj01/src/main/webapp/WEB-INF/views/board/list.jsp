@@ -26,6 +26,7 @@
 			<td>No.</td>
 			<td>제목</td>
 			<td>작성자</td>
+			<td>조회수</td>
 			<td>작성일자</td>
 		</tr>
 		<c:forEach items="${list}" var="board">
@@ -34,6 +35,7 @@
 				<!-- 사용자가 클릭한 bno값을 넘김 -->
 				<td><a href="/board/get?bno=${board.bno}">${board.title}</a></td>
 				<td>${board.writer}</td>
+				<td>${board.count }</td>
 				<!-- fmt:formatDate : 시간빼고 날짜만 출력 -->
 				<td><fmt:formatDate pattern="yyyy-MM-dd"
 						value="${board.regdate}" /></td>

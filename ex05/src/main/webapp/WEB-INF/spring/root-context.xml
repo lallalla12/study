@@ -43,8 +43,8 @@
 
 	<tx:annotation-driven />
 
-	<mybatis-spring:scan base-package="org.hj.mapper" />
+	<mybatis-spring:scan base-package="org.zerock.mapper" />
 
 	<context:component-scan
-		base-package="org.hj.service" />
+		base-package="org.zerock.service" />
 </beans>

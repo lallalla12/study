@@ -96,11 +96,15 @@
 		where bno = #{bno}
 
 	</select>
+	<update id="CountUpdate">
+		update tbl_board
+		set count = count + 1
+		where bno = #{bno}
+	</update>
 	<update id="update">
 		update tbl_board
 		set title = #{title},
-		content =
-		#{content},
+		content = #{content},
 		updatedate = sysdate()
 		where bno = #{bno}
 	</update>
@@ -113,5 +117,6 @@
 		values
 		(#{title}, #{content}, #{writer})
 	</insert>
+
 
 </mapper>
